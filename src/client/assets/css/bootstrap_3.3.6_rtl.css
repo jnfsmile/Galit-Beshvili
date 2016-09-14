@@ -1,0 +1,18 @@
+.navbar-brand {
+  float: right;
+}
+.navbar-collapse{padding-right:15px;padding-left:15px;}
+@media (min-width: 768px){
+  .navbar-header, .navbar-nav, .navbar-nav>li {
+    float: right;
+  }
+  .navbar-right{
+    margin-right:0px;
+  }
+  .navbar-left{
+    margin-left:-15px;
+    &~.navbar-left{
+      margin-left:0;
+    }
+  }
+}
