@@ -16,7 +16,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import {AppState} from './app.service';
+//import {AppState} from './app.service';
 
 import {HomeComponent} from './home';
 
@@ -98,19 +98,19 @@ import {Todo} from './todo/todo.component';
 
   `
 })
-export class App {
+export class AppComponent {
   siteLogo = 'assets/images/site-logo.png';
   name = 'בשבילי';
   url = 'http://localhost:8080/';
 
   // Pass in our application `state`
   // Alternative to using `redux`
-  constructor(public appState: AppState) {}
+  constructor(/*public appState: AppState*/) {}
 
   // Fire off upon initialization
   ngOnInit() {
 
-    console.log('Initial App State', this.appState.state);
+    //console.log('Initial App State', this.appState.state);
   }
 }
 

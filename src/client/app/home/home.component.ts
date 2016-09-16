@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {AppState} from '../app.service';
 
 import {Title} from './services/title';
 import {XLarge} from './directives/x-large';
@@ -41,7 +40,7 @@ export class HomeComponent {
   localState = { value: '' };
 
   // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title) {
+  constructor(public title: Title) {
 
   }
 
