@@ -1,0 +1,100 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+html,
+body {
+  height: 100%;
+  direction: rtl;
+  font-family:$header-font-stack;
+}
+
+body {
+  margin: 0;
+  background: image('bg.png') $brand-color2;
+  font-size: 62.5%;
+  overflow: scroll;
+}
+@media(min-width: 992px){
+  app{
+    display: block;
+    margin: auto;
+    width: 75%;
+  }
+}
+
+.page {
+  position: relative;
+  font-size: 1.6em;
+  top: 0;
+  left: 0;
+  padding: 2.3em 3.7em;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    opacity: 0.65;
+    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    top: 0em;
+    left: 0em;
+    background: white;
+    z-index: -1;
+  }
+}
+
+md-card{
+  margin: 25px;
+}
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+/**
+ * Have header style
+ */
+ h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color:$brand-color;
+	text-align:center;
+}
+h1{
+	font-size:4.8em;
+}
+h2{
+	font-size:3.6em;
+}
+h3{
+	font-size:2.4em;
+}
