@@ -16,7 +16,8 @@ var AboutComponent = (function () {
         this.aboutContent = "אודות";
     }
     AboutComponent.prototype.ngOnInit = function () {
-        this.aboutContent = this.content.getData().value;
+        var _this = this;
+        this.content.getData("about").subscribe(function (res) { return _this.aboutContent = res; });
     };
     AboutComponent = __decorate([
         core_1.Component({

@@ -562,10 +562,6 @@ md-toolbar li.active {
 /**
  * Styles for bootstrap based header
  */
-header img {
-  width: 6.5em;
-  float: right; }
-
 header div.navbar {
   background: #d29bc0;
   border-color: #dbb0cd;
@@ -574,51 +570,61 @@ header div.navbar {
     padding-left: 7em;
     padding-right: initial; }
 
-header .navbar-default .navbar-nav > li a {
-  color: #222222;
-  font-size: 1.7em;
-  padding-top: 1.2em;
-  padding-bottom: 5.8em;
-  transition: all 0.4s;
-  background-size: 100%;
-  position: relative;
-  z-index: 100; }
-  header .navbar-default .navbar-nav > li a:before {
-    background: linear-gradient(to bottom, #a44a86 50%, #f8f8f8 85%);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+header .navbar-default .navbar-nav {
+  padding-right: 0; }
+  header .navbar-default .navbar-nav > li a {
+    color: #222222;
+    font-size: 1.7em;
+    padding-top: 0.6em;
+    padding-bottom: 1.5em;
     transition: all 0.4s;
-    opacity: 0;
-    width: 100%;
-    z-index: -100; }
-  header .navbar-default .navbar-nav > li a:focus:before, header .navbar-default .navbar-nav > li a:hover:before {
-    opacity: 1; }
-  header .navbar-default .navbar-nav > li a.active, header .navbar-default .navbar-nav > li a:focus, header .navbar-default .navbar-nav > li a:hover {
-    color: #e1e1e1; }
-  header .navbar-default .navbar-nav > li a.active {
-    background: linear-gradient(to bottom, #813a69 50%, #f8f8f8 85%); }
+    background-size: 100%;
+    position: relative;
+    z-index: 100; }
+    header .navbar-default .navbar-nav > li a:before {
+      background: linear-gradient(to bottom, #a44a86 50%, #f8f8f8 85%);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.4s;
+      opacity: 0;
+      width: 100%;
+      z-index: -100; }
+    header .navbar-default .navbar-nav > li a:focus:before, header .navbar-default .navbar-nav > li a:hover:before {
+      opacity: 1; }
+    header .navbar-default .navbar-nav > li a.active, header .navbar-default .navbar-nav > li a:focus, header .navbar-default .navbar-nav > li a:hover {
+      color: #e1e1e1; }
+    header .navbar-default .navbar-nav > li a.active {
+      background: linear-gradient(to bottom, #813a69 50%, #f8f8f8 85%); }
 
 header .navbar-brand {
-  height: 3em;
-  width: 125%;
-  /*display: flex;
-    align-items: center;
-    text-align: right;*/
   color: #74132a;
-  font: normal normal bold normal 5em / normal pfennig, arial; }
+  font: normal normal bold normal 5em / normal pfennig, arial;
+  height: 3em;
+  line-height: 1.3em;
+  width: 100%; }
   header .navbar-brand img {
     height: 100%;
-    width: auto; }
-  header .navbar-brand span {
-    font-size: 0.6em; }
+    width: auto;
+    float: right; }
+  header .navbar-brand #site-name {
+    float: right; }
+    header .navbar-brand #site-name div {
+      display: inline-block;
+      font-size: 0.6em;
+      line-height: 0.8em; }
 
 header .navbar-toggle {
   padding: 1em;
-  margin: 2.5em; }
+  margin: 2em 1.2em; }
+
+@media (min-width: 992px) {
+  header .navbar .navbar-nav > li a {
+    padding-top: 1.2em;
+    padding-bottom: 5.8em; } }
 
 footer {
   flex: 0 0 60px;

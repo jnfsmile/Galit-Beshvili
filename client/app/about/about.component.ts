@@ -19,6 +19,6 @@ export class AboutComponent {
   }
 
   ngOnInit() {
-    this.aboutContent = this.content.getData().value;
+    this.content.getData("about").subscribe(res => this.aboutContent = res);
   }
 }

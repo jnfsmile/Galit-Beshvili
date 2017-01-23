@@ -6,13 +6,14 @@
   "repository": "",
   "license": "",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" \"watch:css\" \"dev:server\"",
+    "start": "tsc && concurrently \"tsc -w\" \"nodemon server.js\"",
+    "start:dev": "tsc && concurrently \"tsc -w\" \"lite-server\" \"nodemon -e scss -x 'npm run build:css'\"",
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "build:css": "node-sass client/sass/main.scss client/assets/css/main.css",
     "watch:css": "nodemon -e scss -x \"npm run build:css\"",
-    "dev:server": "nodemon server.js"
+    "server:dev": "nodemon server.js"
   },
   "dependencies": {
     "@angular/common": "~2.4.0",

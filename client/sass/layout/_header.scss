@@ -22,10 +22,7 @@ md-toolbar li.active {
  * Styles for bootstrap based header
  */
 header {
-  img {
-    width: 6.5em;
-    float: right;
-  }
+
   div.navbar {
     background: $brand-color2;
     border-color: lighten($brand-color2, 6%);
@@ -36,12 +33,14 @@ header {
     }
   }
 
-  .navbar-default .navbar-nav>li {
+  .navbar-default .navbar-nav {
+    padding-right: 0;
+    &>li {
     a {
       color: $text-color;
       font-size: 1.7em;
-      padding-top: 1.2em;
-      padding-bottom: 5.8em;
+      padding-top: 0.6em;
+      padding-bottom: 1.5em;
       transition: all 0.4s;
 
       background-size: 100%;
@@ -82,27 +81,47 @@ header {
         //background: darken($brand-color2, 35%);
       }
     }
-
+}
   }
 
   .navbar-brand {
-    height: 3em;
-    width: 125%;
-    /*display: flex;
-    align-items: center;
-    text-align: right;*/
     color: $brand-color;
     font: normal normal bold normal 5em / normal pfennig, arial;
+    height: 3em;
+    line-height: 1.3em;
+    width: 100%;
+
     img {
-      height: 100%; width: auto;
+      height: 100%;
+      width: auto;
+      float: right;
     }
-    span {
-      font-size: 0.6em;
+    #site-name {
+      float: right;
+
+      div {
+        display: inline-block;
+        font-size: 0.6em;
+        line-height: 0.8em;
+      }
     }
   }
   .navbar-toggle {
     padding: 1em;
-    margin: 2.5em
+    margin: 2em 1.2em;
   }
 
+}
+
+@media #{map-get($breakpoints,medium)} {
+  header .navbar {
+    .navbar-nav {
+      &>li {
+        a {
+          padding-top: 1.2em;
+          padding-bottom: 5.8em;
+        }
+      }
+    }
+  }
 }
