@@ -7,7 +7,9 @@ import { AppComponent }   from './app.component';
 import { HomeComponent }   from './home/index';
 import { ContactComponent } from './contact/index';
 import { AboutComponent } from './about/index';
+import { BookComponent } from './book/index';
 import { NotYetComponent }   from './notYet/index';
+import { ThumbnailComponent }   from './thumbnail/index';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -18,8 +20,8 @@ import { AppRoutingModule }     from './app-routing.module';
   	HttpModule,
     AppRoutingModule
   ],
-  declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent,
-    NotYetComponent ],
+  declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent,
+    NotYetComponent, ThumbnailComponent ],
   providers: [
   ],
   bootstrap:    [ AppComponent ]

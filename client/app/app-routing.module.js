@@ -12,8 +12,9 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var index_1 = require('./home/index');
 var index_2 = require('./about/index');
-var index_3 = require('./contact/index');
-var index_4 = require('./notYet/index');
+var index_3 = require('./book/index');
+var index_4 = require('./contact/index');
+var index_5 = require('./notYet/index');
 var routes = [
     {
         path: '',
@@ -26,19 +27,23 @@ var routes = [
     },
     {
         path: 'personal',
-        component: index_4.NotYetComponent
+        component: index_5.NotYetComponent
+    },
+    {
+        path: 'book',
+        component: index_3.BookComponent
     },
     {
         path: 'workshop',
-        component: index_4.NotYetComponent
+        component: index_5.NotYetComponent
     },
     {
         path: 'lecture',
-        component: index_4.NotYetComponent
+        component: index_5.NotYetComponent
     },
     {
         path: 'blog',
-        component: index_4.NotYetComponent
+        component: index_5.NotYetComponent
     },
     {
         path: 'about',
@@ -46,7 +51,7 @@ var routes = [
     },
     {
         path: 'contact',
-        component: index_3.ContactComponent
+        component: index_4.ContactComponent
     }
 ];
 var AppRoutingModule = (function () {

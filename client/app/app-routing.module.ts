@@ -2,6 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/index';
 import { AboutComponent } from './about/index';
+import { BookComponent } from './book/index';
 import { ContactComponent } from './contact/index';
 import { NotYetComponent } from './notYet/index';
 
@@ -19,6 +20,10 @@ const routes: Routes = [
     path: 'personal',
     component: NotYetComponent
     //component: PersonalComponent
+  },
+    {
+      path: 'book',
+      component: BookComponent
   },
   {
     path: 'workshop',

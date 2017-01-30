@@ -641,6 +641,21 @@ footer {
   color: #bb00bb;
   font-weight: 600; }
 
+.page.book p {
+  margin: 0 0 2em; }
+
+.page.book .book-highlight.pink {
+  color: #bb00bb;
+  font-weight: 600; }
+
+.page.book .book-highlight {
+  color: #00bbbb;
+  font-weight: 600; }
+
+.page.book .book-highlight.start {
+  color: #007777;
+  font-weight: 600; }
+
 button.active {
   background: #fff;
   color: #009688; }

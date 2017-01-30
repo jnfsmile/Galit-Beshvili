@@ -16,7 +16,9 @@ var app_component_1 = require('./app.component');
 var index_1 = require('./home/index');
 var index_2 = require('./contact/index');
 var index_3 = require('./about/index');
-var index_4 = require('./notYet/index');
+var index_4 = require('./book/index');
+var index_5 = require('./notYet/index');
+var index_6 = require('./thumbnail/index');
 var app_routing_module_1 = require('./app-routing.module');
 var AppModule = (function () {
     function AppModule() {
@@ -29,8 +31,8 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 app_routing_module_1.AppRoutingModule
             ],
-            declarations: [app_component_1.AppComponent, index_1.HomeComponent, index_2.ContactComponent, index_3.AboutComponent,
-                index_4.NotYetComponent],
+            declarations: [app_component_1.AppComponent, index_1.HomeComponent, index_2.ContactComponent, index_3.AboutComponent, index_4.BookComponent,
+                index_5.NotYetComponent, index_6.ThumbnailComponent],
             providers: [],
             bootstrap: [app_component_1.AppComponent]
         }), 

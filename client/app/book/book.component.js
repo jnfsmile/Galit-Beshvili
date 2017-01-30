@@ -10,24 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var index_1 = require('./services/content/index');
-var AboutComponent = (function () {
-    function AboutComponent(content) {
+var BookComponent = (function () {
+    function BookComponent(content) {
         this.content = content;
-        this.aboutContent = "אודות";
+        this.bookContent = "אודות הספר";
     }
-    AboutComponent.prototype.ngOnInit = function () {
+    BookComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.content.getData("about").subscribe(function (res) { return _this.aboutContent = res; });
+        this.content.getData("aboutBook").subscribe(function (res) { return _this.bookContent = res; });
     };
-    AboutComponent = __decorate([
+    BookComponent = __decorate([
         core_1.Component({
-            selector: 'about',
+            selector: 'book',
             providers: [index_1.Content],
-            template: "\n      <section class=\"page about\">\n        <div [innerHTML]=\"aboutContent\"></div>\n      </section>\n  ",
+            template: "\n      <section class=\"page book\">\n        <h2>\u05D4\u05D7\u05D9\u05D9\u05DD \u05E9\u05D1\u05EA\u05D5\u05DB\u05DA</h2>\n        <p>\n          <thumbnail src=\"/assets/images/book-cover.jpg\" alt=\"\u05DB\u05E8\u05D9\u05DB\u05D4 \u05E9\u05DC \u05D4\u05E1\u05E4\u05E8 \u05D4\u05D7\u05D9\u05D9\u05DD \u05E9\u05D1\u05EA\u05D5\u05DB\u05DA\"></thumbnail>\n        </p>\n        <div [innerHTML]=\"bookContent\"></div>\n      </section>\n  ",
         }), 
         __metadata('design:paramtypes', [index_1.Content])
-    ], AboutComponent);
-    return AboutComponent;
+    ], BookComponent);
+    return BookComponent;
 }());
-exports.AboutComponent = AboutComponent;
-//# sourceMappingURL=about.component.js.map
+exports.BookComponent = BookComponent;
+//# sourceMappingURL=book.component.js.map
