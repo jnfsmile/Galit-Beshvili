@@ -14,7 +14,7 @@ body {
   font-size: 62.5%;
   overflow: scroll;
 }
-@media(min-width: 992px){
+@media #{map-get($breakpoints,medium)} {
   app{
     display: block;
     margin: auto;
@@ -88,6 +88,7 @@ h5,
 h6 {
 	color:$brand-color;
 	text-align:center;
+  font: normal normal bold normal 5em / normal pfennig, arial;
 }
 h1{
 	font-size:4.8em;

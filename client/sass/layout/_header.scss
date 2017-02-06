@@ -113,7 +113,7 @@ header {
 
 }
 
-@media #{map-get($breakpoints,medium)} {
+@media #{map-get($breakpoints,large)} {
   header .navbar {
     .navbar-nav {
       &>li {

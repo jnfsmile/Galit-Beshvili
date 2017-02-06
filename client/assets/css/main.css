@@ -444,7 +444,8 @@ h4,
 h5,
 h6 {
   color: #74132a;
-  text-align: center; }
+  text-align: center;
+  font: normal normal bold normal 5em / normal pfennig, arial; }
 
 h1 {
   font-size: 4.8em; }
@@ -621,7 +622,7 @@ header .navbar-toggle {
   padding: 1em;
   margin: 2em 1.2em; }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   header .navbar .navbar-nav > li a {
     padding-top: 1.2em;
     padding-bottom: 5.8em; } }

@@ -15,7 +15,10 @@ export class Content {
       let data = {
   aboutBook: `
   <p>
-	<span class="book-highlight">כל המתנה וציפייה למשהו</span>	שטרם קורה
+  <a href="http://bit.ly/2jUvvLF">אפשר כבר להזמין במכירה המוקדמת - לחצי כאן</a>
+  </p>
+  <p>
+	<span class="book-highlight start">כל המתנה וציפייה למשהו</span>	שטרם קורה
 	<br />
 	טומנת בתוכה גם תחושת אכזבה והחמצה 'למה זה עדיין לא קרה'
 	<br />
@@ -51,11 +54,11 @@ export class Content {
 <br />
 וצריך להכיר את השפה הזאת.
 <br />
-<span class="book-highlight start">מה היא מספרת? מה היא מרגישה? מה היא מבקשת? מה פותח אותה לטוב?</span>
+<span class="book-highlight">מה היא מספרת? מה היא מרגישה? מה היא מבקשת? מה פותח אותה לטוב?</span>
 </p><p>
 <span class="book-highlight start">נקודת החיפוש אחר נקודת אור חדשה היא הזדמנות טובה להכיר את השפה של הנפש.</span>
 <br />
-<span class="book-highlight start">להכיר את הנפש שלך מתוך</span>
+<span class="book-highlight">להכיר את הנפש שלך מתוך</span>
 <br />
 הקשבה פנימית,
 <br />
@@ -75,7 +78,7 @@ export class Content {
 <br />
 וכניסה למעגל השמחה
 <br />
-<span class="book-highlight start">בדרכך להבאת חיים חדשים לעולם.</span>
+<span class="book-highlight">בדרכך להבאת חיים חדשים לעולם.</span>
 </p><p>
 <span class="book-highlight start">למי הספר מיועד?</span>
 <br />
@@ -85,27 +88,31 @@ export class Content {
 <br />
 הספר <span class="book-highlight">מכוון פנימה ומאפשר</span> לך
 <br />
-<span class="book-highlight start">לשמוע</span> את עצמך מבפנים
+<span class="book-highlight">לשמוע</span> את עצמך מבפנים
 <br />
-<span class="book-highlight start">לראות</span> את מציאות חייך באור אחר
+<span class="book-highlight">לראות</span> את מציאות חייך באור אחר
 <br />
-<span class="book-highlight start">לתת</span> לתחומים נוספים בחייך לזרום ולפרוח
+<span class="book-highlight">לתת</span> לתחומים נוספים בחייך לזרום ולפרוח
 <br />
-<span class="book-highlight start">לקבל</span> כוחות ועוצמות לכל אתגר בדרך בתחום הפוריות ובכלל
+<span class="book-highlight">לקבל</span> כוחות ועוצמות לכל אתגר בדרך בתחום הפוריות ובכלל
 <br />
-<span class="book-highlight start">ליישם כלים חשובים להתמודדות נכונה מול החברה, המשפחה, בן זוגך ועצמך.</span>
+<span class="book-highlight">ליישם כלים חשובים להתמודדות נכונה מול החברה, המשפחה, בן זוגך ועצמך.</span>
 </p>
 <p>
-בקרוב יהיה אפשר לרכוש את הספר בחנויות או בקנייה אונליין.
+בקרוב יהיה אפשר לרכוש את הספר בחנויות.
+<br />
+<a href="http://bit.ly/2jUvvLF">אפשר כבר להזמין במכירה המוקדמת - לחצי כאן</a>
+<!--<br />
+<a href="">קשה לחכות? מתלבטת? רוצה להתרשם? לחצי כאן לפרק חינם מתוך הספר!</a>-->
 </p>
 <p>
 את התהליך שבספר תוכלי לעשות באופן אישי ומדויק לך בפגישות איתי בשילוב סדנא קבוצתית.
 </p>
 <p>
-<a routerLink="/personal" href="/personal">להבין טוב יותר איך הולך תהליך אישי איתי לחצי כאן</a>
+<a routerLink="/personal" href="/personal">רוצה להבין טוב יותר איך הולך תהליך אישי איתי? לחצי כאן</a>
 </p>
 <p>
-<a routerLink="/workshop" href="/workshop">להבין טוב יותר מה קורה בסדנא קבוצתית לחצי כאן</a>
+<a routerLink="/workshop" href="/workshop">מתעניינת מה קורה בסדנא קבוצתית? לחצי כאן</a>
 </p>
 <p>
 <span class="book-highlight pink">שלך באהבה,</span>
