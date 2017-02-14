@@ -428,7 +428,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: #74132a;
+  color: #cc214a;
   text-decoration: none; }
   a:hover, a:active, a:focus {
     color: #222222;
@@ -645,11 +645,11 @@ footer {
 .page.book p {
   margin: 0 0 2em; }
 
-.page.book .book-highlight.pink {
+.page.book .book-highlight {
   color: #bb00bb;
   font-weight: 600; }
 
-.page.book .book-highlight {
+.page.book .book-highlight.green {
   color: #00bbbb;
   font-weight: 600; }
 

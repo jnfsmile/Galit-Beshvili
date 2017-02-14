@@ -9,7 +9,7 @@ import {NgFor} from '@angular/common';
   // Our list of styles in our component. We may add more to compose many styles together
   styles: [ ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  templateUrl: '/app/home/home.html'
+  template: `<div class="page"></div>`
 })
 export class HomeComponent {
 }

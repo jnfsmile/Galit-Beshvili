@@ -15,7 +15,7 @@ export class Content {
       let data = {
   aboutBook: `
   <p>
-  <a href="http://bit.ly/2jUvvLF">אפשר כבר להזמין במכירה המוקדמת - לחצי כאן</a>
+  <a href="http://bit.ly/2jUvvLF">אפשר כבר להזמין במחירי השקה - לחצי כאן</a>
   </p>
   <p>
 	<span class="book-highlight start">כל המתנה וציפייה למשהו</span>	שטרם קורה
@@ -101,7 +101,7 @@ export class Content {
 <p>
 בקרוב יהיה אפשר לרכוש את הספר בחנויות.
 <br />
-<a href="http://bit.ly/2jUvvLF">אפשר כבר להזמין במכירה המוקדמת - לחצי כאן</a>
+<a href="http://bit.ly/2jUvvLF">אפשר כבר להזמין במחירי השקה - לחצי כאן</a>
 <!--<br />
 <a href="">קשה לחכות? מתלבטת? רוצה להתרשם? לחצי כאן לפרק חינם מתוך הספר!</a>-->
 </p>

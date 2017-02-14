@@ -68,7 +68,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: lighten($brand-color, 20%);
   text-decoration: none;
 
   @include on-event {
