@@ -99,3 +99,12 @@ h2{
 h3{
 	font-size:2.4em;
 }
+
+.highlight {
+  color: $brand-color2;
+  font-weight: 600;
+}
+.highlight.start {
+  color: $brand-color;
+  font-weight: 600;
+}

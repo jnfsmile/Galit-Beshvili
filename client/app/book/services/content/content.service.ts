@@ -18,31 +18,31 @@ export class Content {
   <a href="http://bit.ly/2jUvvLF">אפשר כבר להזמין במחירי השקה - לחצי כאן</a>
   </p>
   <p>
-	<span class="book-highlight start">כל המתנה וציפייה למשהו</span>	שטרם קורה
+	<span class="highlight start">כל המתנה וציפייה למשהו</span>	שטרם קורה
 	<br />
 	טומנת בתוכה גם תחושת אכזבה והחמצה 'למה זה עדיין לא קרה'
 	<br />
 	העיכוב הזה, ארוך אשר יהיה, יוצר מעגל של
 	<br />
-	<span class="book-highlight">רצון למימוש – ציפייה – אכזבה – תסכול – חיפוש אחר נקודת אור חדשה</span>
+	<span class="highlight">רצון למימוש – ציפייה – אכזבה – תסכול – חיפוש אחר נקודת אור חדשה</span>
   <br />
 	תוך כדי המעגל הזה את מנסה לפעול עם הגוף, לטפל בו, כדי להגיע כבר אל ההריון המיוחל
 </p><p>
-<span class="book-highlight start">ומה עם הנפש? הקול הפנימי שבתוכך?</span>
+<span class="highlight start">ומה עם הנפש? הקול הפנימי שבתוכך?</span>
 </p><p>
 הספר "החיים שבתוכך"
 <br />
-נכתב מתוך <span class="book-highlight">לב פועם ומרגיש</span>,
+נכתב מתוך <span class="highlight">לב פועם ומרגיש</span>,
 <br />
-מתוך <span class="book-highlight">לימוד, ניסיון חיים וליווי אישי</span> נשים שמחכות...
+מתוך <span class="highlight">לימוד, ניסיון חיים וליווי אישי</span> נשים שמחכות...
 <br />
 ומתוך שליחות גדולה להרבות שמחה, אהבה וחיות בעולם.
 <br />
 הספר מספר לנו
 <br />
-ש<span class="book-highlight">הנפש פועלת יחד עם הגוף</span> ויחד עם זאת, גם היא רוצה לבטא את עצמה.
+ש<span class="highlight">הנפש פועלת יחד עם הגוף</span> ויחד עם זאת, גם היא רוצה לבטא את עצמה.
 </p><p>
-<span class="book-highlight start">הנפש</span> חווה את המעגל הזה.
+<span class="highlight start">הנפש</span> חווה את המעגל הזה.
 <br />
 גם לה קשה שם וגם היא רוצה כבר להתחיל לחוות מעגל שונה, של חיים פריחה ושמחה.
 <br />
@@ -50,15 +50,15 @@ export class Content {
 <br />
 והיא מכונסת ומכווצת בתוך עצמה.
 </p><p>
-העניין הוא ש<span class="book-highlight">לנפש שפה משל עצמה</span>.
+העניין הוא ש<span class="highlight">לנפש שפה משל עצמה</span>.
 <br />
 וצריך להכיר את השפה הזאת.
 <br />
-<span class="book-highlight">מה היא מספרת? מה היא מרגישה? מה היא מבקשת? מה פותח אותה לטוב?</span>
+<span class="highlight">מה היא מספרת? מה היא מרגישה? מה היא מבקשת? מה פותח אותה לטוב?</span>
 </p><p>
-<span class="book-highlight start">נקודת החיפוש אחר נקודת אור חדשה היא הזדמנות טובה להכיר את השפה של הנפש.</span>
+<span class="highlight start">נקודת החיפוש אחר נקודת אור חדשה היא הזדמנות טובה להכיר את השפה של הנפש.</span>
 <br />
-<span class="book-highlight">להכיר את הנפש שלך מתוך</span>
+<span class="highlight">להכיר את הנפש שלך מתוך</span>
 <br />
 הקשבה פנימית,
 <br />
@@ -68,7 +68,7 @@ export class Content {
 <br />
 הקולות המתרוצצים בתוכך.
 </p><p>
-<span class="book-highlight start">הקשבה מודעת לנפש מאפשרת לך</span>
+<span class="highlight start">הקשבה מודעת לנפש מאפשרת לך</span>
 <br />
 בהירות
 <br />
@@ -78,25 +78,25 @@ export class Content {
 <br />
 וכניסה למעגל השמחה
 <br />
-<span class="book-highlight">בדרכך להבאת חיים חדשים לעולם.</span>
+<span class="highlight">בדרכך להבאת חיים חדשים לעולם.</span>
 </p><p>
-<span class="book-highlight start">למי הספר מיועד?</span>
+<span class="highlight start">למי הספר מיועד?</span>
 <br />
 הספר מיועד לכל אישה שממתינה לפרי בטנה ובעצם לכל אישה ממתינה שמשהו טוב יקרה בחייה
 <br />
 ורוצה להיכנס למעגל של חיות שמחה וטוב.
 <br />
-הספר <span class="book-highlight">מכוון פנימה ומאפשר</span> לך
+הספר <span class="highlight">מכוון פנימה ומאפשר</span> לך
 <br />
-<span class="book-highlight">לשמוע</span> את עצמך מבפנים
+<span class="highlight">לשמוע</span> את עצמך מבפנים
 <br />
-<span class="book-highlight">לראות</span> את מציאות חייך באור אחר
+<span class="highlight">לראות</span> את מציאות חייך באור אחר
 <br />
-<span class="book-highlight">לתת</span> לתחומים נוספים בחייך לזרום ולפרוח
+<span class="highlight">לתת</span> לתחומים נוספים בחייך לזרום ולפרוח
 <br />
-<span class="book-highlight">לקבל</span> כוחות ועוצמות לכל אתגר בדרך בתחום הפוריות ובכלל
+<span class="highlight">לקבל</span> כוחות ועוצמות לכל אתגר בדרך בתחום הפוריות ובכלל
 <br />
-<span class="book-highlight">ליישם כלים חשובים להתמודדות נכונה מול החברה, המשפחה, בן זוגך ועצמך.</span>
+<span class="highlight">ליישם כלים חשובים להתמודדות נכונה מול החברה, המשפחה, בן זוגך ועצמך.</span>
 </p>
 <p>
 בקרוב יהיה אפשר לרכוש את הספר בחנויות.
@@ -115,7 +115,7 @@ export class Content {
 <a routerLink="/workshop" href="/workshop">מתעניינת מה קורה בסדנא קבוצתית? לחצי כאן</a>
 </p>
 <p>
-<span class="book-highlight pink">שלך באהבה,</span>
+<span class="highlight pink">שלך באהבה,</span>
 <br />
 גלית.
 </p>`

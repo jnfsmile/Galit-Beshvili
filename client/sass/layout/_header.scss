@@ -48,7 +48,7 @@ header {
       z-index: 100;
 
         &:before {
-         background: linear-gradient(to bottom, darken($brand-color2, 25%) 50%, $header-bg 85%);
+         background: linear-gradient(to bottom, #A44A86 50%, $header-bg 85%);
          content: '';
          display: block;
          height: 100%;
@@ -77,7 +77,7 @@ header {
       }
 
       &.active {
-        background: linear-gradient(to bottom, darken($brand-color2, 35%) 50%, $header-bg 85%);
+        background: linear-gradient(to bottom, #A44A86 50%, $header-bg 85%);
         //background: darken($brand-color2, 35%);
       }
     }
