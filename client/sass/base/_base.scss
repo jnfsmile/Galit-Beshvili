@@ -24,7 +24,7 @@ body {
 
 .page {
   position: relative;
-  font-size: 1.6em;
+  font-size: 1.45em;
   top: 0;
   left: 0;
   padding: 2.3em 3.7em;
@@ -98,6 +98,25 @@ h2{
 }
 h3{
 	font-size:2.4em;
+}
+h4,
+h5,
+h6{
+  text-align: inherit;
+  font: normal normal bold normal 5em / normal arial;
+}
+h4 {
+  font-size:1.8em;
+}
+h5 {
+  font-size:1.8em;
+}
+h6 {
+  font-size:1.8em;
+}
+
+p {
+  margin: 1em 0 1em;
 }
 
 .highlight {

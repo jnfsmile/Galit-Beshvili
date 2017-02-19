@@ -390,7 +390,7 @@ body {
 
 .page {
   position: relative;
-  font-size: 1.6em;
+  font-size: 1.45em;
   top: 0;
   left: 0;
   padding: 2.3em 3.7em; }
@@ -456,11 +456,29 @@ h2 {
 h3 {
   font-size: 2.4em; }
 
-.highlight {
+h4,
+h5,
+h6 {
+  text-align: inherit;
+  font: normal normal bold normal 5em / normal arial; }
+
+h4 {
+  font-size: 1.8em; }
+
+h5 {
+  font-size: 1.8em; }
+
+h6 {
+  font-size: 1.8em; }
+
+p {
+  margin: 1em 0 1em; }
+
+.highlight, home ul li {
   color: #bb00bb;
   font-weight: 600; }
 
-.highlight.start {
+.highlight.start, home ul li.start {
   color: #74132A;
   font-weight: 600; }
 
@@ -655,34 +673,6 @@ button.active {
 
 button.active:hover {
   color: #fff; }
-
-.fill {
-  flex: 1 1 auto; }
-
-.app-state {
-  margin: 15px;
-  flex: 1;
-  max-height: 9.969rem; }
-
-.home {
-  flex: 1; }
-
-md-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%; }
-
-.card-container {
-  display: flex;
-  flex-direction: column;
-  margin: 15px;
-  border: 2px dashed #FBC02D; }
-
-.sample-content {
-  flex: 1; }
-
-.card-container md-card {
-  margin: 5px; }
 
 contact ul {
   list-style: none; }
