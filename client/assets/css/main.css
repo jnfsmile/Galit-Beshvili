@@ -661,6 +661,8 @@ header button.navbar-toggle {
 @media (min-width: 1200px) {
   header .navbar .navbar-nav > li {
     float: right; }
+    header .navbar .navbar-nav > li:hover {
+      background: none; }
     header .navbar .navbar-nav > li a {
       padding-top: 1.2em;
       padding-bottom: 5.8em; } }

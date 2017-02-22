@@ -124,6 +124,9 @@ header {
     .navbar-nav {
       &>li {
         float: right;
+        &:hover {
+          background: none;
+        }
         a {
           padding-top: 1.2em;
           padding-bottom: 5.8em;
