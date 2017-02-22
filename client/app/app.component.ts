@@ -29,14 +29,15 @@ import { Component } from '@angular/core';
        <!-- navbar -->
        <div class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-left">
-           <li><a routerLink="/home" routerLinkActive="active">ראשי</a></li>
-           <li><a routerLink="/personal" routerLinkActive="active">תהליך אישי</a></li>
-           <li><a routerLink="/workshop" routerLinkActive="active">סדנאות</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/home" routerLinkActive="active">ראשי</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/personal" routerLinkActive="active">תהליך אישי</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/workshop" routerLinkActive="active">סדנאות</a></li>
            <!--<li><a routerLink="/lecture" routerLinkActive="active">הרצאות</a></li>
            <li><a routerLink="/blog" routerLinkActive="active">בלוג</a></li>-->
-           <li><a routerLink="/book" routerLinkActive="active">ספר</a></li>
-           <li><a routerLink="/about" routerLinkActive="active">אודות</a></li>
-           <li><a routerLink="/contact" routerLinkActive="active">צרי קשר</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/creative" routerLinkActive="active">יצירה</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/book" routerLinkActive="active">ספר</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/about" routerLinkActive="active">אודות</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/contact" routerLinkActive="active">צרי קשר</a></li>
          </ul>
 
        </div><!-- /navbar -->
