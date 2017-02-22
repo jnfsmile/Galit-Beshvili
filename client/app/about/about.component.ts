@@ -7,6 +7,7 @@ import {Content} from './services/content/index';
   providers: [ Content ],
   template: `
       <section class="page about">
+        <h3>הסיפור שלי</h3>
         <div [innerHTML]="aboutContent"></div>
       </section>
   `,

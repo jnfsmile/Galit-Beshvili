@@ -10,6 +10,9 @@ import {NgFor} from '@angular/common';
   styles: [ ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   template: `<div class="page">
+
+  <h3>ברוכה הבאה</h3>
+
   <p><span class="highlight">לאפשר להריון וללידה שלי להגיע אלי ללא תסכול ומתח</span></p>
 
 <p><span class="highlight">להיות שמחה, רגועה ושלמה עם עצמי ועם אתגרי הפוריות שבחיי</span></p>

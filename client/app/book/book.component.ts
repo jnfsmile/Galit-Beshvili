@@ -7,7 +7,7 @@ import {Content} from './services/content/index';
   providers: [ Content ],
   template: `
       <section class="page book">
-        <h2>החיים שבתוכך</h2>
+        <h3>החיים שבתוכך</h3>
         <p>
           <thumbnail src="/assets/images/book-cover.jpg" alt="כריכה של הספר החיים שבתוכך"></thumbnail>
         </p>
