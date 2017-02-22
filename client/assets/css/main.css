@@ -390,7 +390,7 @@ body {
 
 .page {
   position: relative;
-  font-size: 1.45em;
+  font-size: 1.48em;
   top: 0;
   left: 0;
   padding: 2.3em 3.7em; }
@@ -405,6 +405,10 @@ body {
     left: 0em;
     background: white;
     z-index: -1; }
+  .page h3:first-child {
+    margin-bottom: 1.85em; }
+  .page ol {
+    list-style-type: hebrew; }
 
 md-card {
   margin: 25px; }
@@ -463,13 +467,13 @@ h6 {
   font: normal normal bold normal 5em / normal arial; }
 
 h4 {
-  font-size: 1.8em; }
+  font-size: 1.3em; }
 
 h5 {
-  font-size: 1.8em; }
+  font-size: 1.1em; }
 
 h6 {
-  font-size: 1.8em; }
+  font-size: 1em; }
 
 p {
   margin: 1em 0 1em; }
@@ -599,33 +603,39 @@ header div.navbar {
 
 header .navbar-default .navbar-nav {
   padding-right: 0; }
-  header .navbar-default .navbar-nav > li a {
-    color: #222222;
-    font-size: 1.7em;
-    padding-top: 0.6em;
-    padding-bottom: 1.5em;
-    transition: all 0.4s;
-    background-size: 100%;
-    position: relative;
-    z-index: 100; }
-    header .navbar-default .navbar-nav > li a:before {
-      background: linear-gradient(to bottom, #A44A86 50%, #f8f8f8 85%);
-      content: '';
-      display: block;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
+  header .navbar-default .navbar-nav > li {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    float: none; }
+    header .navbar-default .navbar-nav > li a {
+      color: #222222;
+      font-size: 1.7em;
+      padding-top: 0.6em;
+      padding-bottom: 1.5em;
       transition: all 0.4s;
-      opacity: 0;
-      width: 100%;
-      z-index: -100; }
-    header .navbar-default .navbar-nav > li a:focus:before, header .navbar-default .navbar-nav > li a:hover:before {
-      opacity: 1; }
-    header .navbar-default .navbar-nav > li a.active, header .navbar-default .navbar-nav > li a:focus, header .navbar-default .navbar-nav > li a:hover {
-      color: #e1e1e1; }
-    header .navbar-default .navbar-nav > li a.active {
-      background: linear-gradient(to bottom, #A44A86 50%, #f8f8f8 85%); }
+      background-size: 100%;
+      position: relative;
+      z-index: 100; }
+      header .navbar-default .navbar-nav > li a:before {
+        background: linear-gradient(to bottom, #A44A86 50%, #f8f8f8 85%);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.4s;
+        opacity: 0;
+        width: 100%;
+        z-index: -100; }
+      header .navbar-default .navbar-nav > li a:focus:before, header .navbar-default .navbar-nav > li a:hover:before {
+        opacity: 1; }
+      header .navbar-default .navbar-nav > li a.active, header .navbar-default .navbar-nav > li a:focus, header .navbar-default .navbar-nav > li a:hover {
+        color: #e1e1e1; }
+      header .navbar-default .navbar-nav > li a.active {
+        background: linear-gradient(to bottom, #A44A86 50%, #f8f8f8 85%); }
 
 header .navbar-brand {
   color: #74132A;
@@ -644,14 +654,16 @@ header .navbar-brand {
       font-size: 0.6em;
       line-height: 0.8em; }
 
-header .navbar-toggle {
+header button.navbar-toggle {
   padding: 1em;
   margin: 2em 1.2em; }
 
 @media (min-width: 1200px) {
-  header .navbar .navbar-nav > li a {
-    padding-top: 1.2em;
-    padding-bottom: 5.8em; } }
+  header .navbar .navbar-nav > li {
+    float: right; }
+    header .navbar .navbar-nav > li a {
+      padding-top: 1.2em;
+      padding-bottom: 5.8em; } }
 
 footer {
   flex: 0 0 60px;
