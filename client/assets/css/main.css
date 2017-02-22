@@ -668,12 +668,20 @@ header button.navbar-toggle {
       padding-bottom: 5.8em; } }
 
 footer {
+  background: #333;
   flex: 0 0 60px;
   padding: 10px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  background: #fff; }
+  position: fixed;
+  bottom: 0;
+  width: inherit; }
+  footer a {
+    color: #ffbbff;
+    font-size: 1.4em;
+    font-weight: bold; }
 
 .page.about p {
   margin: 0 0 2em; }

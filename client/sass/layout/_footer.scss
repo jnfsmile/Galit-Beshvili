@@ -3,10 +3,20 @@
 // -----------------------------------------------------------------------------
 
 footer{
+  background: #333;
   flex: 0 0 60px;
   padding: 10px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  background: #fff;
+  position: fixed;
+  bottom: 0;
+  width: inherit;
+
+  a {
+    color: lighten($brand-color2, 50%);
+    font-size: 1.4em;
+    font-weight: bold;
+  }
 }
