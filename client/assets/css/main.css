@@ -681,7 +681,23 @@ footer {
   footer a {
     color: #ffbbff;
     font-size: 1.4em;
-    font-weight: bold; }
+    font-weight: bold;
+    position: relative;
+    top: 0;
+    right: 0; }
+    footer a:hover {
+      color: #ffeeff; }
+    footer a.facebook::before {
+      background: url(/assets/images/contact/facebook-full.svg) no-repeat;
+      background-size: contain; }
+    footer a::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0.1em;
+      right: -1.3em;
+      height: 1em;
+      width: 1em; }
 
 .page.about p {
   margin: 0 0 2em; }

@@ -18,5 +18,33 @@ footer{
     color: lighten($brand-color2, 50%);
     font-size: 1.4em;
     font-weight: bold;
+    position: relative;
+    top: 0;
+    right: 0;
+
+    &:hover {
+      color: lighten($brand-color2, 60%);
+    }
+
+    &.facebook::before {
+      background: url(/assets/images/contact/facebook-full.svg) no-repeat;
+      background-size: contain;
+    }
+    &.phone::before {
+      //background: url(/assets/images/contact/phone-w.svg) no-repeat white;
+    }
+    &.email::before {
+      //background: url(/assets/images/contact/mail-w.svg) no-repeat white;
+    }
+    &::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0.1em;
+      right: -1.3em;
+      height: 1em;
+      width: 1em;
+    }
+
   }
 }
