@@ -5,6 +5,7 @@ import { AboutComponent } from './about/index';
 import { BookComponent } from './book/index';
 import { PersonalComponent } from './personal/index';
 import { WorkshopComponent } from './workshop/index';
+import { CreativeComponent } from './creative/index';
 import { ContactComponent } from './contact/index';
 import { NotYetComponent } from './notYet/index';
 
@@ -28,8 +29,7 @@ const routes: Routes = [
   },
     {
       path: 'creative',
-      component: NotYetComponent
-      //component: CreativeComponent
+      component: CreativeComponent
   },
   {
     path: 'workshop',

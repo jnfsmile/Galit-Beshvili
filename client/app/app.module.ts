@@ -10,6 +10,7 @@ import { AboutComponent }       from './about/index';
 import { BookComponent }        from './book/index';
 import { WorkshopComponent }    from './workshop/index';
 import { PersonalComponent }    from './personal/index';
+import { CreativeComponent }    from './creative/index';
 import { NotYetComponent }      from './notYet/index';
 import { ThumbnailComponent }   from './thumbnail/index';
 
@@ -23,7 +24,7 @@ import { AppRoutingModule }     from './app-routing.module';
     AppRoutingModule
   ],
   declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent,
-    PersonalComponent, WorkshopComponent, NotYetComponent, ThumbnailComponent ],
+    PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, ThumbnailComponent ],
   providers: [
   ],
   bootstrap:    [ AppComponent ]

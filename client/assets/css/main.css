@@ -712,6 +712,30 @@ button.active {
 button.active:hover {
   color: #fff; }
 
+.page.creative {
+  display: flex;
+  align-content: stretch; }
+  .page.creative aside {
+    min-width: 25%; }
+  .page.creative ul {
+    list-style-type: none; }
+    .page.creative ul a {
+      cursor: pointer; }
+  .page.creative .song-intro {
+    font-size: 0.9em;
+    margin-bottom: 0.7em; }
+  .page.creative .song-title {
+    font-size: 1.2em;
+    margin-bottom: 1em; }
+  .page.creative .song-words {
+    font-style: italic; }
+    .page.creative .song-words.center {
+      text-align: center; }
+  .page.creative .content-end {
+    letter-spacing: 0.2em;
+    font-weight: bold;
+    text-align: center; }
+
 contact ul {
   list-style: none; }
   contact ul li {
