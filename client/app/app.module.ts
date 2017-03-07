@@ -7,6 +7,7 @@ import { AppComponent }         from './app.component';
 import { HomeComponent }        from './home/index';
 import { ContactComponent }     from './contact/index';
 import { AboutComponent }       from './about/index';
+import { MediaComponent }       from './media/index';
 import { BookComponent }        from './book/index';
 import { WorkshopComponent }    from './workshop/index';
 import { PersonalComponent }    from './personal/index';
@@ -23,7 +24,7 @@ import { AppRoutingModule }     from './app-routing.module';
   	HttpModule,
     AppRoutingModule
   ],
-  declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent,
+  declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent, MediaComponent,
     PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, ThumbnailComponent ],
   providers: [
   ],

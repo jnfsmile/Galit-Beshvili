@@ -31,6 +31,7 @@ import { Component } from '@angular/core';
          <ul class="nav navbar-nav navbar-left">
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/home" routerLinkActive="active">ברוכה הבאה</a></li>
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/about" routerLinkActive="active">אודות</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/media" routerLinkActive="active">בתקשורת</a></li>
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/personal" routerLinkActive="active">תהליך אישי</a></li>
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/workshop" routerLinkActive="active">סדנאות</a></li>
            <!--<li><a routerLink="/lecture" routerLinkActive="active">הרצאות</a></li>
