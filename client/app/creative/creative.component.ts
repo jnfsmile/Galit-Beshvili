@@ -9,7 +9,7 @@ import {Content} from './services/content/index';
     <aside>
       <div>שירים</div>
       <ul class="content-list">
-        <li *ngFor="let song of songs" (click)="onSelect(song, true)" [class.selected]="song.id===selectedContent.id">
+        <li *ngFor="let song of songs" (click)="onSelect(song)" [class.selected]="song.id===selectedContent.id">
           <a>{{song.name}}</a>
         </li>
       </ul>
@@ -22,8 +22,8 @@ import {Content} from './services/content/index';
     </aside>
     <div *ngIf='selectedContent.id!==""'>
       <div class="song-intro">{{selectedContent.intro}}</div>
-      <div class="song-title" [class.center]="selectedContent.center">{{selectedContent.name}}</div>
-      <div class="song-words" [class.center]="selectedContent.center" [innerHTML]="selectedContent.words"></div>
+      <div class="song-title" [class.center]="selectedContent.type==='song'">{{selectedContent.name}}</div>
+      <div class="song-words" [class.center]="selectedContent.type==='song'" [innerHTML]="selectedContent.words"></div>
       <br />
       <div class="content-end">*************************</div>
     </div>
@@ -41,7 +41,6 @@ export class CreativeComponent {
 
   onSelect(item, center) {
     this.selectedContent = item;
-    this.selectedContent.center = center;
   }
 
   ngOnInit() {

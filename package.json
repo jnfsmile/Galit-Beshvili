@@ -9,7 +9,7 @@
 	},
   "license": "",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"nodemon server.js\" \"nodemon -e scss -x 'npm run build:css'\"",
+    "start": "tsc && concurrently \"tsc -w\" \"nodemon server.js\"",
     "start:dev": "tsc && concurrently \"tsc -w\" \"lite-server\" \"nodemon -e scss -x 'npm run build:css'\"",
     "lite": "lite-server",
     "tsc": "tsc",
