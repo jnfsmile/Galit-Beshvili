@@ -21,6 +21,9 @@
   .song-title {
     font-size: 1.2em;
     margin-bottom: 1em;
+    &.center {
+      text-align: center;
+    }
   }
   .song-words {
     font-style: italic;

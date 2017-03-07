@@ -727,6 +727,8 @@ button.active:hover {
   .page.creative .song-title {
     font-size: 1.2em;
     margin-bottom: 1em; }
+    .page.creative .song-title.center {
+      text-align: center; }
   .page.creative .song-words {
     font-style: italic; }
     .page.creative .song-words.center {

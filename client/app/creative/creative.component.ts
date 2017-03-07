@@ -22,7 +22,7 @@ import {Content} from './services/content/index';
     </aside>
     <div *ngIf='selectedContent.id!==""'>
       <div class="song-intro">{{selectedContent.intro}}</div>
-      <div class="song-title">{{selectedContent.name}}</div>
+      <div class="song-title" [class.center]="selectedContent.center">{{selectedContent.name}}</div>
       <div class="song-words" [class.center]="selectedContent.center" [innerHTML]="selectedContent.words"></div>
       <br />
       <div class="content-end">*************************</div>
