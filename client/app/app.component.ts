@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
            <div id="site-name">
              {{name}}
              <br/>
-             <div>הכוונה והדרכה<br />מול אתגרי הפוריות</div>
+             <div>ליווי אישי-רוחני<br />מול אתגרי הפוריות</div>
            </div>
          </a>
 
