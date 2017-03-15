@@ -11,8 +11,7 @@ export class Content {
   }
   getData(key) {
       let data = {
-  aboutPersonal: `
-
+  aboutPersonal: `<p><i>מתחילה תהליך? <a href="/assets/files/welcome.pdf" target="_new">הורידי כאן</a> את הערכה לפתיחת תהליך. מלאי את הערכה ושלחי אלי במייל.</i></p>
 <p>תמיכה וליווי בדרך להריון אינה בגדר מותרות.
 <br />
 התהליך האישי יוצר עוגן במציאות המטלטלת של ההמתנה לילד.
