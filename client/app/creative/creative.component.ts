@@ -22,8 +22,8 @@ import {Content} from './services/content/index';
     </aside>
     <div *ngIf='selectedContent.id!==""'>
       <div class="song-intro">{{selectedContent.intro}}</div>
-      <div class="song-title" [class.center]="selectedContent.type==='song'">{{selectedContent.name}}</div>
-      <div class="song-words" [class.center]="selectedContent.type==='song'" [innerHTML]="selectedContent.words"></div>
+      <div [ngClass]="{'song-title': true, 'center': selectedContent.type=='song'}">{{selectedContent.name}}</div>
+      <div [ngClass]="{'song-words': true, 'center': selectedContent.type=='song'}" [innerHTML]="selectedContent.words"></div>
       <br />
       <div class="content-end">*************************</div>
     </div>
@@ -44,7 +44,7 @@ export class CreativeComponent {
   }
 
   ngOnInit() {
-  this.content.getData("songs").subscribe(res => this.songs = res.map(s => {return {name: s.name, words: s.words.replace(/\n/g, "<br />"), intro: s.intro};}));
-  this.content.getData("stories").subscribe(res => this.stories = res.map(s => {return {name: s.name, words: s.words.replace(/\n/g, "<br />")};}));
+  this.content.getData("songs").subscribe(res => this.songs = res.map(s => {return {name: s.name, words: s.words.replace(/\n/g, "<br />"), intro: s.intro, type: s.type};}));
+  this.content.getData("stories").subscribe(res => this.stories = res.map(s => {return {name: s.name, words: s.words.replace(/\n/g, "<br />"), type: s.type};}));
   }
 }
