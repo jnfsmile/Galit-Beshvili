@@ -119,11 +119,15 @@ header {
 
 }
 
-@media #{map-get($breakpoints,large)} {
+@media #{map-get($breakpoints,small)} {
   header .navbar {
+
     .navbar-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       &>li {
-        float: right;
+        flex: 0 1 auto;
         &:hover {
           background: none;
         }
@@ -132,6 +136,14 @@ header {
           padding-bottom: 5.8em;
         }
       }
+    }
+  }
+}
+
+@media #{map-get($breakpoints,large)} {
+  header .navbar {
+    .navbar-nav {
+      flex-wrap: nowrap;
     }
   }
 }

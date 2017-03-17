@@ -658,14 +658,22 @@ header button.navbar-toggle {
   padding: 1em;
   margin: 2em 1.2em; }
 
+@media (min-width: 768px) {
+  header .navbar .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    header .navbar .navbar-nav > li {
+      flex: 0 1 auto; }
+      header .navbar .navbar-nav > li:hover {
+        background: none; }
+      header .navbar .navbar-nav > li a {
+        padding-top: 1.2em;
+        padding-bottom: 5.8em; } }
+
 @media (min-width: 1200px) {
-  header .navbar .navbar-nav > li {
-    float: right; }
-    header .navbar .navbar-nav > li:hover {
-      background: none; }
-    header .navbar .navbar-nav > li a {
-      padding-top: 1.2em;
-      padding-bottom: 5.8em; } }
+  header .navbar .navbar-nav {
+    flex-wrap: nowrap; } }
 
 footer {
   background: #333;

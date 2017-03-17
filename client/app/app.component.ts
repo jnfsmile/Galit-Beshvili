@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="hidden-xs hidden-sm navbar-brand" routerLink="/home" title="בשבילי - אימון והדרכה">
+         <a class="hidden-xs navbar-brand" routerLink="/home" title="בשבילי - אימון והדרכה">
            <img [src]="siteLogo" alt="לוגו" />
            <div id="site-name">
              {{name}}
@@ -38,7 +38,7 @@ import { Component } from '@angular/core';
            <li><a routerLink="/blog" routerLinkActive="active">בלוג</a></li>-->
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/creative" routerLinkActive="active">השראה</a></li>
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/book" routerLinkActive="active">ספר</a></li>
-           <li class="navbar-toggle hidden-lg" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/contact" routerLinkActive="active">צרי קשר</a></li>
+           <li class="navbar-toggle visible-xs" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/contact" routerLinkActive="active">צרי קשר</a></li>
          </ul>
 
        </div><!-- /navbar -->
@@ -46,7 +46,7 @@ import { Component } from '@angular/core';
    </nav>
  </header>
  <router-outlet></router-outlet>
- <footer class="hidden-xs hidden-sm">
+ <footer class="hidden-xs">
      <div><a class="email" href="mailto:galit@be-shvili.co.il">galit@be-shvili.co.il</a></div>
      <div><a class="phone" href="tel:+972-050-44-70-180">050-4470180</a></div>
      <div><a class="facebook" href="http://facebook.com/galit.beshvili">גלית אימון אישי לפוריות</a></div>
