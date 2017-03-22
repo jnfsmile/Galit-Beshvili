@@ -15,7 +15,7 @@ export class Content {
       let data = {
   aboutBook: `
   <p>
-  <a href="http://bit.ly/2jUvvLF">אפשר כבר להזמין במחירי השקה - לחצי כאן</a>
+  <a href="http://be-shvili.ravpage.co.il/freezugi">קבלת הפרק "עניין זוגי" במתנה - לחצי כאן</a>
   </p>
   <p>
 	<span class="highlight start">כל המתנה וציפייה למשהו</span>	שטרם קורה
