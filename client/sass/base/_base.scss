@@ -24,10 +24,10 @@ body {
 
 .page {
   position: relative;
-  font-size: 1.48em;
+  font-size: 1.14em;
   top: 0;
   left: 0;
-  padding: 2.3em 3.7em;
+  padding: 1em 0.7em;
 
   &::before {
     content: " ";
@@ -50,6 +50,13 @@ body {
     list-style-type: hebrew;
   }
 }
+@media #{map-get($breakpoints,medium)} {
+  .page {
+    font-size: 1.48em;
+    padding: 2.3em 3.7em;
+  }
+}
+
 
 md-card{
   margin: 25px;
