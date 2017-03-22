@@ -4,6 +4,7 @@ import { HomeComponent } from './home/index';
 import { AboutComponent } from './about/index';
 import { MediaComponent } from './media/index';
 import { BookComponent } from './book/index';
+import { BlogComponent } from './blog/index';
 import { PersonalComponent } from './personal/index';
 import { WorkshopComponent } from './workshop/index';
 import { CreativeComponent } from './creative/index';
@@ -42,9 +43,8 @@ const routes: Routes = [
     //component: LectureComponent
   },
   {
-    path: 'blog',
-    component: NotYetComponent
-    //component: BlogComponent
+    path: 'blog/:id',
+    component: BlogComponent
   },
   {
     path: 'about',

@@ -9,11 +9,13 @@ import { ContactComponent }     from './contact/index';
 import { AboutComponent }       from './about/index';
 import { MediaComponent }       from './media/index';
 import { BookComponent }        from './book/index';
+import { BlogComponent }        from './blog/index';
 import { WorkshopComponent }    from './workshop/index';
 import { PersonalComponent }    from './personal/index';
 import { CreativeComponent }    from './creative/index';
 import { NotYetComponent }      from './notYet/index';
 import { ThumbnailComponent }   from './thumbnail/index';
+import { YoutubeComponent }   from './youtube/index';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -24,8 +26,8 @@ import { AppRoutingModule }     from './app-routing.module';
   	HttpModule,
     AppRoutingModule
   ],
-  declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent, MediaComponent,
-    PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, ThumbnailComponent ],
+  declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent, BlogComponent, MediaComponent,
+    PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, ThumbnailComponent, YoutubeComponent ],
   providers: [
   ],
   bootstrap:    [ AppComponent ]

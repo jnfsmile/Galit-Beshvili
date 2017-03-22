@@ -746,6 +746,9 @@ button.active:hover {
     font-weight: bold;
     text-align: center; }
 
+.page.blog ol {
+  list-style: decimal; }
+
 contact ul {
   list-style: none; }
   contact ul li {
