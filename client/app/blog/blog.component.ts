@@ -4,10 +4,11 @@ import {Observable} from 'rxjs/Observable';
 
 import {BlogPost} from './blog-post';
 import {Content} from './services/content/index';
+import {TagService} from '../tags/index';
 
 @Component({
   selector: 'blog',
-  providers: [ Content ],
+  providers: [ Content, TagService ],
   template: `
       <section class="page blog">
         <article>
@@ -20,7 +21,7 @@ import {Content} from './services/content/index';
           <div [innerHTML]="body"></div>
         </article>
       </section>
-  `,
+  `
 })
 export class BlogComponent {
   blogContent = "";
@@ -29,7 +30,7 @@ export class BlogComponent {
   author = "";
   lastChange = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, public content: Content) {
+  constructor(private route: ActivatedRoute, private router: Router, public content: Content, public tags: TagService) {
 
   }
 
@@ -45,6 +46,7 @@ export class BlogComponent {
         this.author = res.author;
         this.lastChange = res.lastChange;
 
+        this.tags.getData().subscribe( () => {} );
       });
     });
   }
