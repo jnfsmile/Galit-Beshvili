@@ -88,3 +88,6 @@ $RECYCLE.BIN/
 dist
 *.map
 dev assets
+*.env
+routes
+server.js
