@@ -1,1 +1,2 @@
-export * from './services/content/index';
+export * from './tag';
+export * from './tag.component';

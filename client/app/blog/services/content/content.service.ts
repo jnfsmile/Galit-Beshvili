@@ -1,27 +1,42 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 
-import {BlogPost} from '../../blog-post';
+import {BlogPost} from '../../index';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 @Injectable()
 export class Content {
+
   value = 'בשבילי';
+  data = [];
+
   constructor(public http: Http) {
 
   }
 
+  getByTag(id) {
+    this.getRawData();
+    return Observable.of(this.data.filter( item => item.tags.indexOf(id) >= 0));
+  }
+
   getData(key) {
-      let data = [];
-      data.push( new BlogPost(
+    this.getRawData();
+    return Observable.of(key ? this.data.filter((item)=>item.id==key)[0] : this.data.reduce((last, current) => (last.lastChange < current.lastChange) ? current : last, this.data[0] ));
+  }
+
+  getRawData() {
+    if (this.data.length > 0) return this.data;
+      this.data.push( ...[
+      new BlogPost(
         {
           id: "0",
           title: "איך תדעי אם רופא הפוריות שלך טוב לך או לא?",
           author: "גלית פרידמן",
           authorEmail: "galit@be-shvili.co.il",
           lastChange: "2017-03-21",
+          tags: [0, 8],
           body: `<p>
 ניסיון רב שנים, שם טוב, או מרפאה נחשבת
 <br />
@@ -152,7 +167,29 @@ export class Content {
 <br />
 גלית.
 </p>`
-      }));
-    return Observable.of(key ? data.filter((item)=>item.id==key)[0] : data[0]);
+      }),
+      new BlogPost(
+        {
+          id: "1",
+          title: "נסיון1",
+          author: "גלית פרידמן",
+          authorEmail: "galit@be-shvili.co.il",
+          lastChange: "2017-03-21",
+          tags: [0],
+          body: `<p>`
+          }),
+      new BlogPost(
+        {
+          id: "2",
+          title: "נסיון2",
+          author: "גלית פרידמן",
+          authorEmail: "galit@be-shvili.co.il",
+          lastChange: "2017-03-21",
+          tags: [0],
+          body: `<p>`
+          })
+          ]);
+
+    return this.data;
   }
 }

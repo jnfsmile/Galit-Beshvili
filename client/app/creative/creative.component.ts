@@ -63,9 +63,7 @@ export class CreativeComponent {
   }
 
   onSelect(item) {
-    console.log(item);
     this.router.navigate(['/creative', { id: item.id }]);
-    //this.setContent(item.id);
   }
 
   setContent (id) {
