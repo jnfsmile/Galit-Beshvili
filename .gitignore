@@ -91,3 +91,4 @@ dev assets
 *.env
 routes
 server.js
+client/assets/css/main.css
