@@ -24,6 +24,12 @@ import {Content} from './services/content/index';
             <a>{{story.name}}</a>
           </li>
         </ul>
+        <div>קטעים</div>
+        <ul class="content-list">
+          <li *ngFor="let short of shorts()" (click)="onSelect(short)" [class.selected]="short.id===selectedContent.id">
+            <a>{{short.name}}</a>
+          </li>
+        </ul>
       </div>
       <div class="visible-xs">
         <select [(ngModel)]="currentId" name="contentSelect">
@@ -61,6 +67,9 @@ export class CreativeComponent {
   stories() {
     return this.contentArray.filter(s=>s.type==='story');
   }
+  shorts() {
+    return this.contentArray.filter(s=>s.type==='short');
+  }
 
   onSelect(item) {
     this.router.navigate(['/creative', { id: item.id }]);
@@ -77,7 +86,7 @@ export class CreativeComponent {
       .switchMap((params: Params) => Observable.of(this.currentId = params['id'] || this.currentId))
       .subscribe( () => {
         this.content.getData(null).subscribe(res => {
-          this.contentArray = res["songs"].concat(res["stories"]).map(s => {
+          this.contentArray = res["songs"].concat(res["stories"]).concat(res["shorts"]).map(s => {
             return {id: s.id, name: s.name, words: s.words.replace(/\n/g, "<br />"), intro: s.intro, type: s.type};
           }
         )}, null, () => this.setContent(this.currentId))
