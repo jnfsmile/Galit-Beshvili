@@ -11,12 +11,11 @@ import {Content as BlogService} from '../blog/services/content/index';
   selector: 'tag',
   providers: [ BlogService, TagService ],
   template: `
-      <section class="page tag">
+      <section class="page tag postbatch">
         <h3>{{title}}</h3>
         <article *ngFor="let post of posts">
           <div (click)="navigate(post.id)">{{post.title}}</div>
           <div>{{post.author}}</div>
-          <hr />
         </article>
       </section>
   `

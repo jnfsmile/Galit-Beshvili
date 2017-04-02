@@ -1,0 +1,9 @@
+.postbatch {
+   article {
+     border-bottom: 1px solid $brand-color;
+
+     &:last-of-type {
+       border-bottom: 0;
+     }
+   }
+}
