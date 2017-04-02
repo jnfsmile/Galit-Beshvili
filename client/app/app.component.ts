@@ -45,7 +45,15 @@ import { Component } from '@angular/core';
 
    </nav>
  </header>
- <router-outlet></router-outlet>
+ <div class="main-container">
+   <router-outlet></router-outlet>
+   <aside>סדנה חדשה יוצאת לדרך!<br />הסדנה מתחיל בי"ב באייר, 8.5, ותתקיים בסטודיו כפרי בהוד השרון. להרשמה ופרטים <a routerLink="/contact">צרי קשר</a>
+   <hr />
+   <a href="">סרטון הכנה לפסח</a>
+   <br />
+   <a href="/assets/files/pesach_prep_77.docx">דף עבודה להכנה לפסח</a>
+   </aside>
+ </div>
  <footer class="hidden-xs">
      <div><a class="email" href="mailto:galit@be-shvili.co.il">galit@be-shvili.co.il</a></div>
      <div><a class="phone" href="tel:+972-050-44-70-180">050-4470180</a></div>
