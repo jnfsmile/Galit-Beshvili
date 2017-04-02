@@ -21,6 +21,11 @@ import {NgFor} from '@angular/common';
 
 <p><span class="highlight">וכך גם את יכולה לחיות ולהביא חיים!</span></p>
 
+<figure>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/n3beRU5-6TI?rel=0" frameborder="0" allowfullscreen></iframe>
+  <figcaption><a href="http://be-shvili.ravpage.co.il/freecounsle">קביעת שיחת ייעוץ עם גלית</a></figcaption>
+</figure>
+
 <p><span class="highlight start">אני זוכרת את הרגע בו הבנתי</span> שאני מחכה להריון שלא מגיע וזה משתלט לי על כל החיים.
 לא ידעתי איך "לאכול" את זה והרגשתי בהמתנה מורטת עצבים וחוסר ודאות טוטאלי איך
 ומתי זה יגיע. (אם בכלל...) הקושי התעצם ופתאום, לדבר שאמור להיות הכי פשוט וטבעי
@@ -55,6 +60,10 @@ import {NgFor} from '@angular/common';
 <p><span class="highlight">הבנתי שאני מעדיפה לרוץ מטיפול לטיפול מאשר לשמוע מה מתרחש בתוכי</span></p>
 
 <p><span class="highlight">הבנתי שאני מפחדת מאיך ייראו חיי עד סוף גיל הפוריות.</span></p>
+
+<figure>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/_Tzl32J7kAg" frameborder="0" allowfullscreen></iframe>
+</figure>
 
 <p><span class="highlight start">אבל לא ידעתי מה לעשות עם כל ההבנות האלה.</span></p>
 

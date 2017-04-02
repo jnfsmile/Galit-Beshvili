@@ -8,4 +8,12 @@ home {
       @extend .highlight;
     }
   }
+
+  figure {
+    display: block;
+    text-align: center;
+    figcaption a {
+      font-size: 2em;
+    }
+  }
 }
