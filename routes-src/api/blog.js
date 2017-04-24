@@ -29,7 +29,7 @@ router.get('/blog/:id', function(req, res, next) {
 /* POST/SAVE a blog */
 router.post('/blog', function(req, res, next) {
   var blog = req.body;
-  if (!blog.text || !(blog.isCompleted + '')) {
+  if (!blog.title || !blog.body || !blog.author) {
     res.status(400);
     res.json({
       "error": "Invalid Data"

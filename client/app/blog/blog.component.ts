@@ -54,8 +54,10 @@ export class BlogComponent {
     this.route.params
     .switchMap((params: Params) => Observable.of( params['id'] ))
     .subscribe( id => {
-      this.content.getData(id).subscribe((res:BlogPost) => {
-        if (!res) return;
+      this.content.getData().subscribe( post => {
+        console.log(post);
+        if (!post) return;
+        let res = new BlogPost(post[0]);
         this.body = res.body;
         this.title = res.title;
         this.author = res.author;

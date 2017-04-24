@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="hidden-xs navbar-brand" routerLink="/home" title="בשבילי - אימון והדרכה">
+         <a class="hidden-xs navbar-brand" routerLink="/home" title="לדף הבית">
            <img [src]="siteLogo" alt="לוגו" />
            <div id="site-name">
              {{name}}
@@ -71,6 +71,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
  siteLogo = 'assets/images/site-logo.png';
- name = 'בשבילי';
+ name = 'גלית פרידמן';
  url = '/';
 }

@@ -12,22 +12,25 @@ export class Content {
   value = 'בשבילי';
   data = [];
 
-  constructor(public http: Http) {
+  constructor(private http: Http) {
 
   }
 
   getByTag(id) {
-    this.getRawData();
+    //this.getRawData();
     return Observable.of(this.data.filter( item => item.tags.indexOf(id) >= 0));
   }
 
-  getData(key) {
+/*  getData(key) {
     this.getRawData();
     return Observable.of(key ? this.data.filter((item)=>item.id==key)[0] : this.data.reduce((last, current) => (last.lastChange < current.lastChange) ? current : last, this.data[0] ));
   }
-
-  getRawData() {
-    if (this.data.length > 0) return this.data;
+*/
+  getData(): Observable<BlogPost[]> {
+    //if (this.data.length > 0) return this.data;
+    return this.http.get("/api/v1/blogs")
+    .map(item =>item.json());
+    /*
       this.data.push( ...[
       new BlogPost(
         {
@@ -170,6 +173,6 @@ export class Content {
       })
           ]);
 
-    return this.data;
+    return this.data;*/
   }
 }

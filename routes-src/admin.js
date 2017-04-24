@@ -6,7 +6,7 @@ const OAuth2Client = google.auth.OAuth2;
 
 // Client ID and client secret are available at
 // https://code.google.com/apis/console
-const CLIENT_ID = '884723383363-opauujdrveua40r79svjjml2ljfe11u7.apps.googleusercontent.com';
+const CLIENT_ID = process.env.GOOGLE_CLIENTID;
 const CLIENT_SECRET = process.env.GOOGLE_SECRET;
 const REDIRECT_URL = `${process.env.HOST}/admin/post-login`;
 

@@ -25,7 +25,7 @@ const port = process.env.PORT || 8080;
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
 }));
 app.use(cookieParser());
 app.use('/node_modules/', express.static(path.join(__dirname, 'node_modules')));
