@@ -88,7 +88,7 @@ $RECYCLE.BIN/
 dist
 *.map
 dev assets
-*.env
+/.env
 routes
-server.js
+/server.js
 client/assets/css/main.css
