@@ -11,7 +11,6 @@ import { WorkshopComponent } from './workshop/index';
 import { CreativeComponent } from './creative/index';
 import { ContactComponent } from './contact/index';
 import { NotYetComponent } from './notYet/index';
-import { LoginPageComponent } from './admin/login/index';
 
 const routes: Routes = [
   {
@@ -63,10 +62,6 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
-  },
-  {
-    path: 'admin',
-    component: LoginPageComponent
   }
 ];
 @NgModule({

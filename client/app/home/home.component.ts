@@ -22,7 +22,7 @@ import {NgFor} from '@angular/common';
 <p><span class="highlight">וכך גם את יכולה לחיות ולהביא חיים!</span></p>
 
 <figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/n3beRU5-6TI?rel=0" frameborder="0" allowfullscreen></iframe>
+  <youtube id="n3beRU5-6TI"></youtube>
   <figcaption><a href="http://be-shvili.ravpage.co.il/freecounsle">קביעת שיחת ייעוץ עם גלית</a></figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ import {NgFor} from '@angular/common';
 <p><span class="highlight">הבנתי שאני מפחדת מאיך ייראו חיי עד סוף גיל הפוריות.</span></p>
 
 <figure>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/_Tzl32J7kAg" frameborder="0" allowfullscreen></iframe>
+  <youtube id="_Tzl32J7kAg"></youtube>
 </figure>
 
 <p><span class="highlight start">אבל לא ידעתי מה לעשות עם כל ההבנות האלה.</span></p>

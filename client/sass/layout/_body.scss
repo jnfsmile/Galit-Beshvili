@@ -20,6 +20,9 @@
     z-index: -1;
   }
   &>aside {
+    margin-top: 0.7em;
+    border-top: 1px solid $brand-color;
+    padding-top: 1em;
     width: 100%;
   }
 
@@ -40,6 +43,7 @@
       max-width: 22%;
       padding: 0.7em;
       border-right: 1px solid $brand-color2;
+      border-top: none;
       margin: 0 0.7em 0.5em 0;
     }
 

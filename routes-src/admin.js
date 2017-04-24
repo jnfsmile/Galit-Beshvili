@@ -37,12 +37,19 @@ router.get('/post-login', function(req, res, next) {
     const plus = google.plus("v1");
     // retrieve user profile
     plus.people.get({ userId: 'me', auth: oauth2Client }, function (err, profile) {
+      const authorized = JSON.parse(process.env.AUTHORIZED);
+      console.log(authorized);
       if (err) {
         res.send(err);
         return console.log('An error occured', err);
       }
-      res.send(profile.displayName, ':', profile.tagline);
-      console.log(profile.displayName, ':', profile.tagline);
+      if (authorized.indexOf(profile.id) >= 0)
+        res.send(profile.displayName, ':', profile.tagline);
+      else {
+        res.send(`Sorry, ${profile.displayName}, you are unauthorized for this page<br /><a href="/">homepage</a>`);
+      }
+      console.log(`admin accessed by`, profile);
+
     });
 
   });

@@ -47,14 +47,19 @@ import { Component } from '@angular/core';
  </header>
  <div class="main-container">
    <router-outlet></router-outlet>
-   <aside>סדנה חדשה יוצאת לדרך!<br />הסדנה מתחיל בי"ב באייר, 8.5, ותתקיים בסטודיו כפרי בהוד השרון. להרשמה ופרטים <a routerLink="/contact">צרי קשר</a>
+   <aside>סדנה חדשה יוצאת לדרך!<br />הסדנה מתחיל בי"ב באייר, 8.5, ותתקיים בסטודיו כפרי בהוד השרון. פרטים כאן:<br />
+   <gallery-image src="/assets/images/promotions/5777workshop.jpg" map=""></gallery-image>
+   <map name="flyer">
+    <area shape="rect" coords="100,200,250,50" href="/workshop" alt="סדנה" title="סדנה" style="background:red;border: 1px solid black;">
+   </map>
    <hr />
-   <a href="">סרטון הכנה לפסח</a>
+   לקראת החג -<br />
+   <a href="https://youtu.be/o7TxNHhI53I">סרטון חיזוק לקראת החג</a>
    <br />
-   <a href="/assets/files/pesach_prep_77.docx">דף עבודה להכנה לפסח</a>
+   <a href="/assets/files/pesach_prep_77.docx">דף הכנה עצמית לקראת החג</a>
    </aside>
  </div>
- <footer class="hidden-xs">
+ <footer class="hidden-xs hidden-sm">
      <div><a class="email" href="mailto:galit@be-shvili.co.il">galit@be-shvili.co.il</a></div>
      <div><a class="phone" href="tel:+972-050-44-70-180">050-4470180</a></div>
      <div><a class="facebook" href="http://facebook.com/galit.beshvili">גלית אימון אישי לפוריות</a></div>

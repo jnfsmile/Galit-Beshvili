@@ -17,10 +17,9 @@ import { CreativeComponent }    from './creative/index'
 
 import { NotYetComponent }      from './notYet/index';
 import { ThumbnailComponent }   from './thumbnail/index';
+import { GalleryComponent }   from './gallery/index';
+import { GalleryImageComponent }   from './gallery/index';
 import { YoutubeComponent }   from './youtube/index';
-
-import { LoginComponent }   from './login/index';
-import { LoginPageComponent }   from './admin/login/index';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -32,8 +31,7 @@ import { AppRoutingModule }     from './app-routing.module';
     AppRoutingModule
   ],
   declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent, BlogComponent, TagComponent, MediaComponent,
-    PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, ThumbnailComponent, YoutubeComponent, LoginComponent,
-    LoginPageComponent ],
+    PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, ThumbnailComponent, GalleryComponent, GalleryImageComponent, YoutubeComponent ],
   providers: [
   ],
   bootstrap:    [ AppComponent ]

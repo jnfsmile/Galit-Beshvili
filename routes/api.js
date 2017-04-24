@@ -1,10 +1,13 @@
+'use strict';
+
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
 var db = mongojs('mongodb://localhost:27017/', ['beshvili']);
+
 /* GET All Todos */
-router.get('/todos', function(req, res, next) {
-  db.todos.find(function(err, todos) {
+router.get('/todos', function (req, res, next) {
+  db.todos.find(function (err, todos) {
     if (err) {
       res.send(err);
     } else {
@@ -13,10 +16,10 @@ router.get('/todos', function(req, res, next) {
   });
 });
 /* GET One Todo with the provided ID */
-router.get('/todo/:id', function(req, res, next) {
+router.get('/todo/:id', function (req, res, next) {
   db.todos.findOne({
     _id: mongojs.ObjectId(req.params.id)
-  }, function(err, todos) {
+  }, function (err, todos) {
     if (err) {
       res.send(err);
     } else {
@@ -25,7 +28,7 @@ router.get('/todo/:id', function(req, res, next) {
   });
 });
 /* POST/SAVE a Todo */
-router.post('/todo', function(req, res, next) {
+router.post('/todo', function (req, res, next) {
   var todo = req.body;
   if (!todo.text || !(todo.isCompleted + '')) {
     res.status(400);
@@ -33,24 +36,24 @@ router.post('/todo', function(req, res, next) {
       "error": "Invalid Data"
     });
   } else {
-    db.todos.save(todo, function(err, result) {
+    db.todos.save(todo, function (err, result) {
       if (err) {
         res.send(err);
       } else {
         res.json(result);
       }
-    })
+    });
   }
 });
 /* PUT/UPDATE a Todo */
-router.put('/todo/:id', function(req, res, next) {
+router.put('/todo/:id', function (req, res, next) {
   var todo = req.body;
   var updObj = {};
   if (todo.isCompleted) {
-  updObj.isCompleted = todo.isCompleted;
+    updObj.isCompleted = todo.isCompleted;
   }
   if (todo.text) {
-  updObj.text = todo.text;
+    updObj.text = todo.text;
   }
   if (!updObj) {
     res.status(400);
@@ -59,21 +62,21 @@ router.put('/todo/:id', function(req, res, next) {
     });
   } else {
     db.todos.update({
-    _id: mongojs.ObjectId(req.params.id)
-    }, updObj, {}, function(err, result) {
+      _id: mongojs.ObjectId(req.params.id)
+    }, updObj, {}, function (err, result) {
       if (err) {
-      res.send(err);
+        res.send(err);
       } else {
-      res.json(result);
+        res.json(result);
       }
     });
   }
 });
 /* DELETE a Todo */
-router.delete('/todo/:id', function(req, res) {
+router.delete('/todo/:id', function (req, res) {
   db.todos.remove({
     _id: mongojs.ObjectId(req.params.id)
-  }, '', function(err, result) {
+  }, '', function (err, result) {
     if (err) {
       res.send(err);
     } else {
@@ -81,4 +84,7 @@ router.delete('/todo/:id', function(req, res) {
     }
   });
 });
+
+router.use('/', require('./api/blog'));
+
 module.exports = router;
