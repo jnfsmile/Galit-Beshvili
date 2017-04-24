@@ -167,27 +167,7 @@ export class Content {
 <br />
 גלית.
 </p>`
-      }),
-      new BlogPost(
-        {
-          id: "1",
-          title: "נסיון1",
-          author: "גלית פרידמן",
-          authorEmail: "galit@be-shvili.co.il",
-          lastChange: "2017-03-21",
-          tags: [0],
-          body: `<p>`
-          }),
-      new BlogPost(
-        {
-          id: "2",
-          title: "נסיון2",
-          author: "גלית פרידמן",
-          authorEmail: "galit@be-shvili.co.il",
-          lastChange: "2017-03-21",
-          tags: [0],
-          body: `<p>`
-          })
+      })
           ]);
 
     return this.data;

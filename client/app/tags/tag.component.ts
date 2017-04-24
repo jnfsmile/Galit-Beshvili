@@ -14,7 +14,7 @@ import {Content as BlogService} from '../blog/services/content/index';
       <section class="page tag postbatch">
         <h3>{{title}}</h3>
         <article *ngFor="let post of posts">
-          <div (click)="navigate(post.id)">{{post.title}}</div>
+          <div (click)="navigate(post.id)"><a>{{post.title}}</a></div>
           <div>{{post.author}}</div>
         </article>
       </section>
