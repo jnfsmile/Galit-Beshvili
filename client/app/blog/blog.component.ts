@@ -54,17 +54,16 @@ export class BlogComponent {
     this.route.params
     .switchMap((params: Params) => Observable.of( params['id'] ))
     .subscribe( id => {
-      this.content.getData().subscribe( post => {
-        console.log(post);
-        if (!post) return;
-        let res = new BlogPost(post[0]);
-        this.body = res.body;
-        this.title = res.title;
-        this.author = res.author;
-        this.authorEmail = res.authorEmail;
-        this.lastChange = res.lastChange;
+      this.content.getData().subscribe( all => {
+        if (!all) return;
+        let blog = new BlogPost(all[0]);
+        this.body = blog.body;
+        this.title = blog.title;
+        this.author = blog.author;
+        this.authorEmail = blog.authorEmail;
+        this.lastChange = blog.lastChange;
 
-        this.tagService.getData(res.tags).subscribe( (res:SubjectTag[]) => {this.taglist=res} );
+        this.tagService.getData(blog.tags).subscribe( (res:SubjectTag[]) => {this.taglist=res} );
       });
     });
   }

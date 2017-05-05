@@ -4,7 +4,10 @@ import { HomeComponent } from './home/index';
 import { AboutComponent } from './about/index';
 import { MediaComponent } from './media/index';
 import { BookComponent } from './book/index';
+
 import { BlogComponent } from './blog/index';
+import { BlogEditComponent } from './blog/index';
+
 import { TagComponent } from './tags/index';
 import { PersonalComponent } from './personal/index';
 import { WorkshopComponent } from './workshop/index';
@@ -46,6 +49,10 @@ const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent
+  },
+  {
+    path: 'blogEdit',
+    component: BlogEditComponent
   },
   {
     path: 'tag',
