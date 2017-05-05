@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-console.log('`GalleryImage` component loaded asynchronously');
-
 @Component({
   selector: 'gallery-image',
   styles: [`

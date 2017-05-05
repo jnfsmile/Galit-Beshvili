@@ -6,8 +6,6 @@ import {Component} from '@angular/core';
  * see https://github.com/gdi2290/es6-promise-loader for more info
  */
 
-console.log('`NotYet` component loaded asynchronously');
-
 @Component({
   selector: 'notyet',
   template: `
