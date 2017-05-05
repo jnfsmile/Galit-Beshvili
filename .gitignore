@@ -93,3 +93,9 @@ routes
 /server.js
 client/assets/css/main.css
 client/assets/css/main.css
+*.env
+.env
+server.js
+client/assets/css/main.css
+routes/index.js
+server.js
