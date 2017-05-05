@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
 const api = require('./routes/api');
+const sapi = require('./routes/sapi');
 
 const app = express();
 
@@ -27,17 +28,26 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(cookieParser());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use('/node_modules/', express.static(path.join(__dirname, 'node_modules')));
 //app.use(express.static(path.join(__dirname, '')));
 app.use(express.static(path.join(__dirname, 'client')));
 
+app.disable('etag');
+
 app.use('/', index);
 app.use('/api/v1/', api);
+app.use('/sapi/v1/', sapi);
 
 // 404 catch
 app.all('*', function (req, res) {
-  res.status(200).sendFile(path.join(__dirname, '/client/index.html'));
+  res.status(200).sendFile(path.join(__dirname, '/client/index.html'), {}, function (err) {
+    if (err) {
+      next(err);
+    } else {
+      console.log('Sent: file');
+    }
+  });
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
