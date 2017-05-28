@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Content as BlogContentService} from './blog/services/content/index';
+import {BlogPost} from './blog/index';
 
 @Component({
   selector: 'app',
@@ -35,7 +37,7 @@ import { Component } from '@angular/core';
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/personal" routerLinkActive="active">תהליך אישי</a></li>
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/workshop" routerLinkActive="active">סדנאות</a></li>
            <!--<li><a routerLink="/lecture" routerLinkActive="active">הרצאות</a></li>-->
-           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/blog" routerLinkActive="active">בלוג</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a [routerLink]="latestBlog" routerLinkActive="active">בלוג</a></li>
            <li class="navbar-toggle hidden-xs" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/creative" routerLinkActive="active">השראה</a></li>
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/book" routerLinkActive="active">ספר</a></li>
            <li class="navbar-toggle visible-xs" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/contact" routerLinkActive="active">צרי קשר</a></li>
@@ -47,7 +49,7 @@ import { Component } from '@angular/core';
  </header>
  <div class="main-container">
    <router-outlet></router-outlet>
-   <aside>סדנה חדשה יוצאת לדרך!<br />הסדנה מתחיל בי"ב באייר, 8.5, ותתקיים בסטודיו כפרי בהוד השרון. פרטים כאן:<br />
+   <aside>סדנה חדשה יוצאת לדרך!<br />הסדנה תתחיל בקרוב, ותתקיים בסטודיו כפרי בהוד השרון. פרטים כאן:<br />
    <gallery-image src="/assets/images/promotions/5777workshop.jpg" map=""></gallery-image>
    <map name="flyer">
     <area shape="rect" coords="100,200,250,50" href="/workshop" alt="סדנה" title="סדנה" style="background:red;border: 1px solid black;">
@@ -67,10 +69,20 @@ import { Component } from '@angular/core';
  </footer>
 
  `,
- providers: [ ]
+ providers: [ BlogContentService ]
 })
 export class AppComponent {
  siteLogo = 'assets/images/site-logo.png';
  name = 'גלית פרידמן';
  url = '/';
+ latestBlog='/blog/';
+
+ constructor(public bContent: BlogContentService) { }
+ ngOnInit() {
+  this.bContent.getLastId().subscribe( posts => {
+    let id = new BlogPost(posts[0]).id;
+    this.latestBlog = `/blog;id=${id}`;
+  })
+ }
+
 }

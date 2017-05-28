@@ -7,10 +7,10 @@ export class BlogPost {
   body: string;
   tags: number[];
 
-  constructor(item){
-    let { id, lastChange, title, author, authorEmail, tags, body } = item;
+  constructor(item: any = { _id:null, lastChange:"", title:"", author:"גלית פרידמן", authorEmail:"galit@be-shvili.co.il", tags:[], body:"" }){
+    let { _id, lastChange, title, author, authorEmail, tags, body } = item;
 
-    this.id = id;
+    this.id = _id;
     this.lastChange = lastChange;
     this.title = title;
     this.author = author;

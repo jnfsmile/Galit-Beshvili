@@ -51,7 +51,7 @@ const routes: Routes = [
     component: BlogComponent
   },
   {
-    path: 'blogEdit',
+    path: 'blog/edit',
     component: BlogEditComponent
   },
   {

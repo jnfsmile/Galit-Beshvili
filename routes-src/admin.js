@@ -46,8 +46,10 @@ router.get('/post-login', function(req, res, next) {
         return console.log('An error occured', err);
       }
       if (authorized.indexOf(profile.id) >= 0) {
-        res.cookie("admin", profile.id, { path: "/admin", signed: true, httpOnly: true });
-        res.send(`${profile.displayName}:${profile.tagline}`);
+        res.cookie("admin", profile.id, { signed: true, httpOnly: true });
+        console.log(res.cookie);
+        res.redirect('/BlogEdit');
+        //res.send(`${profile.displayName}:${profile.tagline}`);
       }
       else {
         res.clearCookie("admin", { path: "/admin", signed: true, httpOnly: true });

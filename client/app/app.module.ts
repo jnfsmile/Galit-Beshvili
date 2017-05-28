@@ -12,6 +12,7 @@ import { BookComponent }        from './book/index';
 
 import { BlogComponent }        from './blog/index';
 import { BlogEditComponent }        from './blog/index';
+import { Content as BlogContentService }        from './blog/services/content/index';
 
 import { TagComponent }        from './tags/index';
 import { WorkshopComponent }    from './workshop/index';
@@ -36,7 +37,7 @@ import { AppRoutingModule }     from './app-routing.module';
   ],
   declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent, BlogComponent, BlogEditComponent, TagComponent, MediaComponent,
     PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, EditableComponent, ThumbnailComponent, GalleryComponent, GalleryImageComponent, YoutubeComponent ],
-  providers: [
+  providers: [ BlogContentService
   ],
   bootstrap:    [ AppComponent ]
 })

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, Headers, RequestOptions} from '@angular/http';
 
 import {BlogPost} from '../../index';
 
@@ -17,19 +17,31 @@ export class Content {
   }
 
   getByTag(id) {
-    //this.getRawData();
     return Observable.of(this.data.filter( item => item.tags.indexOf(id) >= 0));
   }
 
-/*  getData(key) {
-    this.getRawData();
-    return Observable.of(key ? this.data.filter((item)=>item.id==key)[0] : this.data.reduce((last, current) => (last.lastChange < current.lastChange) ? current : last, this.data[0] ));
+  save(post: BlogPost): Observable<BlogPost> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(`/sapi/v1/blog/${post.id}`, JSON.stringify(post), options)
+    .map(item => item.json());
   }
-*/
-  getData(): Observable<BlogPost[]> {
-    //if (this.data.length > 0) return this.data;
-    return this.http.get("/api/v1/blogs")
-    .map(item =>item.json());
+
+  update(post: BlogPost): Observable<BlogPost> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(`/sapi/v1/blog/${post.id}`, JSON.stringify(post), options)
+    .map(item => item.json());
+  }
+
+  getLastId() : Observable<BlogPost> {
+    return this.http.get(`/api/v1/blogs`).map(item => item.json());
+  }
+
+  getData(id) : Observable<BlogPost[]>{
+    return this.http.get(`/api/v1/blog/${id}`).map(item => item.json());
     /*
       this.data.push( ...[
       new BlogPost(

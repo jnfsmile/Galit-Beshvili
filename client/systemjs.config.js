@@ -24,8 +24,15 @@
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
       // other libraries
       'rxjs':                      'npm:rxjs',
-	  'moment': 'node_modules/moment/moment.js',
-	  'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js'
+      'tinymce': 'npm:angular2-tinymce',
+      'hebcal': 'npm:hebcal/client/hebcal.js',
+  	  'moment': 'node_modules/moment/moment.js',
+  	  'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js'
+    },
+    meta: {
+      'hebcal': {
+        format: 'global'
+      }
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
