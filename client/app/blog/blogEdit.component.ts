@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-//import * as Hebcal from 'hebcal';
 
 import {BlogPost} from './blog.post';
 import {Content as BlogContentService} from './services/content/index';
@@ -19,13 +18,14 @@ import {TagService} from '../tags/services/content/index';
             <editable [text]="title" (textChange)="titleUpdate($event)">{{title}}</editable>
             <div>
               <a [href]="'mailto:'+authorEmail">{{author}}</a>,
-              <time pubdate [attr.datetime]="lastChange">{{lastChange}}</time>
+              <input type="date" [value]="lastChange | date:'yyyy-MM-dd'" (input)="lastChange=parseDate($event.target.value)" />
             </div>
-            <time pubdate [attr.datetime]="lastChange"></time>
-            <editable [text]="body" (textChange)="bodyUpdate($event)">{{body}}</editable>
+            <time pubdate [attr.datetime]="lastChange">{{lastChange | hebdate}}</time>
+            <div [froalaEditor]="editorOptions" [(froalaModel)]="body"></div>
           </header>
           <section>
             <span>תגיות:</span>
+            <tag-input [(ngModel)]='taglistFlat'></tag-input>
             <ul>
               <li *ngFor="let tag of taglist">
                 <a (click)="gotoTag(tag.id)" [href]="'/tag/'+tag.id">{{tag.name}}</a>
@@ -42,16 +42,29 @@ export class BlogEditComponent {
   title = "";
   author = "";
   authorEmail = "";
-  lastChange = "";
+  lastChange = new Date().toISOString();
   taglist = [];
+  taglistFlat = [];
   post: BlogPost;
 
-  constructor(private route: ActivatedRoute, private router: Router, public content: BlogContentService, public tagService: TagService) {
+  currentWait: number;
+  editorOptions = {
+    placeholderText: "תוכן בלוג",
+    events : {
+      "froalaEditor.blur" : (e, editor) => {
+        this.bodyUpdate();
+      },
+      "froalaEditor.keydown" : (e, editor, keydownEvent) => {
+        this.delayUpdate(this.bodyUpdate.bind(this));
+      }
+    }
+  };
 
+  constructor(private route: ActivatedRoute, private router: Router, public content: BlogContentService, public tagService: TagService) {
   }
 
   gotoTag (tagId) {
-    this.router.navigate(['/tag', { id: tagId }]);
+    this.router.navigate( [ '/tag', { id: tagId } ] );
     return false;
   }
 
@@ -74,9 +87,12 @@ export class BlogEditComponent {
           this.title = blog.title;
           this.author = blog.author;
           this.authorEmail = blog.authorEmail;
-          this.lastChange = blog.lastChange;
+          this.lastChange = new Date(Date.parse(blog.lastChange)).toISOString();
 
-          this.tagService.getData(blog.tags).subscribe( (res:SubjectTag[]) => {this.taglist=res} );
+          this.tagService.getData(blog.tags).subscribe( (res:SubjectTag[]) => {
+              this.taglist=res;
+              this.taglistFlat=this.taglist.map( t => { return { display: t.name, value: t.id } } )
+            } );
         });
       }
     });
@@ -93,18 +109,36 @@ export class BlogEditComponent {
     return true;
   }
 
-  titleUpdate(newTitle: string) {
+  titleUpdate( newTitle: string ) {
     this.post.title = newTitle;
+    if ( this.verifyId() ) {
+      this.content.update( this.post ).subscribe( /*post => console.log(post)*/ );
+    }
+  }
+  bodyUpdate() {
+    this.post.body = this.htmlEncode(this.body);
+    //console.log(newBody.substr(150));
+    if (this.currentWait) {
+      clearTimeout(this.currentWait);
+      this.currentWait = 0;
+    }
     if (this.verifyId()) {
       this.content.update(this.post).subscribe( /*post => console.log(post)*/ );
     }
   }
-  bodyUpdate(newBody: string) {
-    this.post.body = this.htmlEncode(newBody);
-    console.log(newBody.substr(150));
+  lastChangeUpdate() {
+    this.post.lastChange = this.lastChange;
     if (this.verifyId()) {
       this.content.update(this.post).subscribe( /*post => console.log(post)*/ );
     }
+  }
+
+  delayUpdate(func) {
+    if (this.currentWait) {
+      clearTimeout(this.currentWait);
+      this.currentWait = 0;
+    }
+    this.currentWait = setTimeout(func, 5000);
   }
   htmlEncode(mdStr: string) {
     let htmlStr = "<p>" + mdStr + "</p>";
@@ -119,5 +153,13 @@ export class BlogEditComponent {
       .replace(/<\/p>/gi, "\n\n")
       .replace(/<p>/gi, "");
     return mdStr;
+  }
+
+  parseDate(dateString: string): Date {
+    if (dateString) {
+      return new Date(dateString);
+    } else {
+      return null;
+    }
   }
 }

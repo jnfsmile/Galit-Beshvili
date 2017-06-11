@@ -24,7 +24,7 @@
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'tinymce': 'npm:angular2-tinymce',
+      'angular2-froala-wysiwyg': 'npm:angular2-froala-wysiwyg/bundles',
       'hebcal': 'npm:hebcal/client/hebcal.js',
   	  'moment': 'node_modules/moment/moment.js',
   	  'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js'
@@ -42,6 +42,23 @@
       },
       rxjs: {
         defaultExtension: 'js'
+      },
+      'angular2-froala-wysiwyg': {
+        main: 'angular2-froala-wysiwyg.umd.min.js',
+        defaultExtension: 'js'
+      },
+      'ng2-tag-input': {
+        main: 'ng2-tag-input.bundle.js',
+        defaultExtension: 'js',
+        format: 'cjs',
+      },
+      'ng2-material-dropdown': {
+          defaultExtension: 'js',
+          main: 'ng2-dropdown.bundle.js',
+          format: 'cjs',
+      },
+      'ng2-tag-input/modules/components/tag-input.template.html': {
+          defaultJSExtension: false
       }
     }
   });

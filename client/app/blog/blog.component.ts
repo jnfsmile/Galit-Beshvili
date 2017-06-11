@@ -1,8 +1,6 @@
 import {Component} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-//import * as Hebcal from 'hebcal';
-declare var Hebcal: any;
 
 import {BlogPost} from './blog.post';
 import {Content as BlogContentService} from './services/content/index';
@@ -20,7 +18,7 @@ import {TagService} from '../tags/services/content/index';
             <h4>{{title}}</h4>
             <div>
               <a [href]="'mailto:'+authorEmail">{{author}}</a>,
-              <time pubdate [attr.datetime]="lastChange">{{lastChange}}</time>
+              <time pubdate [attr.datetime]="lastChange">{{lastChange | hebdate}}</time>
             </div>
           </header>
           <div [innerHTML]="body"></div>
@@ -65,7 +63,7 @@ export class BlogComponent {
         this.title = blog.title;
         this.author = blog.author;
         this.authorEmail = blog.authorEmail;
-        this.lastChange = new Hebcal.HDate(new Date(blog.lastChange)).toString('h');
+        this.lastChange = new Date(blog.lastChange).toISOString();
 
         this.tagService.getData(blog.tags).subscribe( (res:SubjectTag[]) => {this.taglist=res} );
       });

@@ -46,15 +46,6 @@
   <script src="/node_modules/reflect-metadata/Reflect.js"></script>
   <script src="/node_modules/systemjs/dist/system.src.js"></script>
 
-  <script type="text/javascript" charset="utf-8" src="/node_modules/hebcal/client/hebcal.js"></script>
-  <!--
-  <script src="http://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/node_modules/tinymce/tinymce.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/node_modules/tinymce/themes/modern/index.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/node_modules/tinymce/pugins/table/index.js"></script>
-  <script type="text/javascript" charset="utf-8" src="/node_modules/tinymce/pugins/link/index.js"></script>
--->
-
   <!-- 2. Configure SystemJS -->
   <script src="systemjs.config.js"></script>
   <script>
@@ -67,7 +58,9 @@
   nl_search = "1";
   </script>
 
-  <script type="text/javascript" charset="utf-8" src="assets/scripts/nagishli/nagishli.js"></script>
+  <!-- Froala styles -->
+  <link href="/node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet">
+  <link href="/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -90,6 +83,12 @@
   <!-- For loading bootstrap -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <!-- External scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/node_modules/hebcal/client/hebcal.js"></script>
+  <script type="text/javascript" charset="utf-8" src="assets/scripts/nagishli/nagishli.js"></script>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 

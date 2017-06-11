@@ -26,6 +26,12 @@ import { GalleryComponent }   from './gallery/index';
 import { GalleryImageComponent }   from './gallery/index';
 import { YoutubeComponent }   from './youtube/index';
 
+import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
+import { TagInputModule } from 'ng2-tag-input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
+
+import { HebDatePipe } from './pipes/heb-date.pipe';
+
 import { AppRoutingModule }     from './app-routing.module';
 
 @NgModule({
@@ -33,12 +39,14 @@ import { AppRoutingModule }     from './app-routing.module';
   	BrowserModule,
   	FormsModule,
   	HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
+    TagInputModule, BrowserAnimationsModule
   ],
   declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent, BlogComponent, BlogEditComponent, TagComponent, MediaComponent,
-    PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, EditableComponent, ThumbnailComponent, GalleryComponent, GalleryImageComponent, YoutubeComponent ],
-  providers: [ BlogContentService
-  ],
+    PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, EditableComponent, ThumbnailComponent, GalleryComponent, GalleryImageComponent, YoutubeComponent,
+    HebDatePipe ],
+  providers: [ BlogContentService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
