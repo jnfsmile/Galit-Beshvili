@@ -96,3 +96,4 @@ client/src/assets/css/main.css
 *.env
 .env
 routes/index.js
+client/**/*.js
