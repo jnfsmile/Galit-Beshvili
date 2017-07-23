@@ -5,7 +5,7 @@ router.use('/admin/', require('./admin'));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('/client/index.html');
+    res.render('/client/src/index.html');
 });
 
 module.exports = router;

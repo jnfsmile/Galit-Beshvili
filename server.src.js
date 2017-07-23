@@ -31,9 +31,20 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use('/node_modules/', express.static(path.join(__dirname, 'node_modules')));
 //app.use(express.static(path.join(__dirname, '')));
+app.use('/client', express.static(path.join(__dirname, 'client')));
 app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'client/src')));
 
 app.disable('etag');
+
+if (process.env.NODE_ENV === "development")
+{
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+}
 
 app.use('/', index);
 app.use('/api/v1/', api);
@@ -41,7 +52,7 @@ app.use('/sapi/v1/', sapi);
 
 // 404 catch
 app.all('*', function (req, res) {
-  res.status(200).sendFile(path.join(__dirname, '/client/index.html'), {}, function (err) {
+  res.status(200).sendFile(path.join(__dirname, '/client/src/index.html'), {}, function (err) {
     if (err) {
       next(err);
     } else {
