@@ -15,18 +15,15 @@
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
     "noFallthroughCasesInSwitch": true,
-    "outDir": "./client/dist",
-    "rootDir": "./client/app",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules"
-    ],
-    "types": [
-      "core-js"
     ]
   },
   "compileOnSave": false,
   "files": [
-    "client/app/main.ts"
+    "src/main.ts"
   ]
 }

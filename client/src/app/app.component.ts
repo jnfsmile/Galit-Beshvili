@@ -37,7 +37,7 @@ import {BlogPost} from './blog/index';
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/personal" routerLinkActive="active">תהליך אישי</a></li>
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/workshop" routerLinkActive="active">סדנאות</a></li>
            <!--<li><a routerLink="/lecture" routerLinkActive="active">הרצאות</a></li>-->
-           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a [routerLink]="latestBlog" routerLinkActive="active">בלוג</a></li>
+           <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/blog" routerLinkActive="active">בלוג</a></li>
            <li class="navbar-toggle hidden-xs" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/creative" routerLinkActive="active">השראה</a></li>
            <li class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/book" routerLinkActive="active">ספר</a></li>
            <li class="navbar-toggle visible-xs" data-toggle="collapse" data-target=".navbar-collapse.in"><a routerLink="/contact" routerLinkActive="active">צרי קשר</a></li>

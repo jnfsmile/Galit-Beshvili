@@ -84,6 +84,7 @@ router.delete('/todo/:id', function(req, res) {
 });
 
 router.use('/', require('./api/blog'));
+router.use('/', require('./api/tag'));
 router.use('/', require('./api/author'));
 
 module.exports = router;

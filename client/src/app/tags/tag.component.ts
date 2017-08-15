@@ -37,9 +37,8 @@ export class TagComponent {
     this.route.params
     .switchMap((params: Params) => Observable.of( +params['id'] ))
     .subscribe( id => {
-      this.tagService.getData([id]).subscribe( (tags:SubjectTag[]) => this.title = (tags.length>0) ? tags[0].name : "");
+      this.tagService.getData([id]).subscribe( (tags:SubjectTag[]) => this.title = (tags.length > 0) ? tags[0].name : "" );
       this.blogService.getByTag(id).subscribe( (res:BlogPost[]) => {
-        console.log(res);
         if (res.length === 0) return;
         this.posts.push(...res);
       });

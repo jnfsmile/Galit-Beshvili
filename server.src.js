@@ -33,7 +33,7 @@ app.use('/node_modules/', express.static(path.join(__dirname, 'node_modules')));
 //app.use(express.static(path.join(__dirname, '')));
 app.use('/client', express.static(path.join(__dirname, 'client')));
 app.use(express.static(path.join(__dirname, 'client')));
-app.use(express.static(path.join(__dirname, 'client/src')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.disable('etag');
 
@@ -52,7 +52,7 @@ app.use('/sapi/v1/', sapi);
 
 // 404 catch
 app.all('*', function (req, res) {
-  res.status(200).sendFile(path.join(__dirname, '/client/src/index.html'), {}, function (err) {
+  res.status(200).sendFile(path.join(__dirname, '/client/index.html'), {}, function (err) {
     if (err) {
       next(err);
     } else {

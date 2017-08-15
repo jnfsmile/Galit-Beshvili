@@ -1,9 +1,10 @@
 export class SubjectTag {
-  id: number;
+  id: string;
   name: string;
 
-  constructor(id, name) {
-    this.id = id;
+  constructor(item: any = {_id:null, name:""}) {
+    let { _id, name } = item;
+    this.id = _id;
     this.name = name;
   }
 }
