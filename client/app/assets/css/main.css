@@ -421,7 +421,8 @@ html {
  */
 a {
   color: #cc214a;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
   a:hover, a:active, a:focus {
     color: #222222;
     text-decoration: underline; }

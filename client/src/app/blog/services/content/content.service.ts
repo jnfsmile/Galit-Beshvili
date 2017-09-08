@@ -10,15 +10,14 @@ import 'rxjs/Rx';
 export class Content {
 
   value = 'בשבילי';
-  data = [];
 
   constructor(private http: Http, @Inject('BASE_API_URL') private webApiBaseUrl:string) {
 
   }
 
-  getByTag(id) {
+  getByTag(id: String) {
     return this.http.get(this.webApiBaseUrl + `/api/v1/blogs`)
-      .map(item => item.json().filter( item => item.tags.indexOf(id) >= 0 ) );
+      .map(item => item.json().filter( item => item.tags.includes(id)) );
   }
 
   save(post: BlogPost): Observable<BlogPost> {

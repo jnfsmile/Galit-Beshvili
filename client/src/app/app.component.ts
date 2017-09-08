@@ -64,8 +64,8 @@ import {BlogPost} from './blog/index';
  <footer class="hidden-xs hidden-sm">
      <div><a class="email" href="mailto:galit@be-shvili.co.il">galit@be-shvili.co.il</a></div>
      <div><a class="phone" href="tel:+972-050-44-70-180">050-4470180</a></div>
-     <div><a class="facebook" href="http://facebook.com/galit.beshvili">גלית אימון אישי לפוריות</a></div>
-     <!-- <a href='whatsapp://send?text=האתר של גלית פרידמן - אימון אישי לפוריות: http://be-shvili.co.il'>whatsApp</a> -->
+     <div><a class="facebook" href="https://facebook.com/galit.beshvili">גלית אימון אישי לפוריות</a></div>
+     <!-- <a href='whatsapp://send?text=האתר של גלית פרידמן - אימון אישי לפוריות: https://be-shvili.co.il'>whatsApp</a> -->
  </footer>
 
  `,

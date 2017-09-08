@@ -14,7 +14,7 @@ import {Content as BlogService} from '../blog/services/content/index';
       <section class="page tag postbatch">
         <h3>{{title}}</h3>
         <article *ngFor="let post of posts">
-          <div (click)="navigate(post.id)"><a>{{post.title}}</a></div>
+          <div (click)="navigate(post._id)"><a>{{post.title}}</a></div>
           <div>{{post.author}}</div>
         </article>
       </section>
@@ -35,10 +35,10 @@ export class TagComponent {
 
   ngOnInit() {
     this.route.params
-    .switchMap((params: Params) => Observable.of( +params['id'] ))
+    .switchMap((params: Params) => Observable.of( params['id'] ))
     .subscribe( id => {
-      this.tagService.getData([id]).subscribe( (tags:SubjectTag[]) => this.title = (tags.length > 0) ? tags[0].name : "" );
-      this.blogService.getByTag(id).subscribe( (res:BlogPost[]) => {
+      this.tagService.getData(/*[id]*/).subscribe( (tags:SubjectTag[]) => this.title = (tags.length > 0) ? tags[0].name : "" );
+      this.blogService.getByTag( id ).subscribe( (res:BlogPost[]) => {
         if (res.length === 0) return;
         this.posts.push(...res);
       });

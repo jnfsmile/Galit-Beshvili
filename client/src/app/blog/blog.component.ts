@@ -26,7 +26,7 @@ import {TagService} from '../tags/services/content/index';
             <span>תגיות:</span>
             <ul>
               <li *ngFor="let tag of taglist">
-                <a (click)="gotoTag(tag.id)" [href]="'/tag/'+tag.id">{{tag.name}}</a>
+                <a (click)="gotoTag(tag._id)" [href]="'/tag/'+tag._id">{{tag.name}}</a>
               </li>
             </ul>
           </section>
@@ -65,7 +65,7 @@ export class BlogComponent {
         this.authorEmail = blog.authorEmail;
         this.lastChange = new Date(blog.lastChange).toISOString();
 
-        this.tagService.getData(blog.tags).subscribe( (res:SubjectTag[]) => {this.taglist=res} );
+        this.tagService.getData(/*blog.tags*/).subscribe( (res:SubjectTag[]) => {this.taglist=res.filter(tag=>blog.tags.includes(tag._id))} );
       });
     });
   }

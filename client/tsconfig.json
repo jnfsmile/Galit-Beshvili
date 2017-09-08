@@ -7,6 +7,10 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": [
+        "dom",
+        "es2017"
+    ],
     "sourceMap": true,
     "pretty": true,
     "allowUnreachableCode": false,

@@ -16,6 +16,7 @@ router.get('/blogs', function(req, res, next) {
 });
 /* GET One blog with the provided ID */
 router.get('/blog/:id', function(req, res, next) {
+  let id = req.params["id"];
   let validId = typeof(id) !== "undefined" && (id.length == 12 || id.length == 24) && /^[0-9a-fA-F]+$/.test(id)
   if (validId) {
     db.blogs.findOne({
