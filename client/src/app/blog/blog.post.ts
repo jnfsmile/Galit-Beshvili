@@ -5,7 +5,7 @@ export class BlogPost {
   author: string;
   authorEmail: string;
   body: string;
-  tags: number[];
+  tags: string[];
 
   constructor(item: any = { _id:null, lastChange:"", title:"", author:"גלית פרידמן", authorEmail:"galit@be-shvili.co.il", tags:[], body:"" }){
     let { _id, lastChange, title, author, authorEmail, tags, body } = item;

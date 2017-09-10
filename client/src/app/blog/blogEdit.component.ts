@@ -22,6 +22,7 @@ import {TagService} from '../tags/services/content/index';
             </div>
             <time pubdate [attr.datetime]="lastChange">{{lastChange | hebdate}}</time>
             <div [froalaEditor]="editorOptions" [(froalaModel)]="body"></div>
+            <app-tinymce [(ngModel)]='body'></app-tinymce>
           </header>
           <section>
             <span>תגיות:</span>
@@ -85,7 +86,7 @@ export class BlogEditComponent {
           this.lastChange = new Date(Date.parse(blog.lastChange)).toISOString();
 
           this.tagService.getData(/*blog.tags*/).subscribe( (res:SubjectTag[]) => {
-              this.taglist=res.filter(tag=>blog.tags.includes(tag._id));
+              this.taglist=res.filter(tag=>blog.tags.indexOf(tag.id)>=0);
               this.taglistFlat=this.taglist.map( tag => { return { display: tag.name, value: tag.id } } );
             } );
         });

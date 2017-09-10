@@ -65,7 +65,7 @@ export class BlogComponent {
         this.authorEmail = blog.authorEmail;
         this.lastChange = new Date(blog.lastChange).toISOString();
 
-        this.tagService.getData(/*blog.tags*/).subscribe( (res:SubjectTag[]) => {this.taglist=res.filter(tag=>blog.tags.includes(tag._id))} );
+        this.tagService.getData(/*blog.tags*/).subscribe( (res:SubjectTag[]) => {this.taglist=res.filter(tag=>blog.tags.indexOf(tag.id)>=0)} );
       });
     });
   }
