@@ -52,7 +52,11 @@ router.get('/post-login', function(req, res, next) {
         //res.send(`${profile.displayName}:${profile.tagline}`);
       }
       else {
-        res.clearCookie("admin", { path: "/admin", signed: true, httpOnly: true });
+        if (process.env.ENV == "dev") {
+          res.clearCookie("admin", { path: "/admin", httpOnly: true });
+        } else {
+          res.clearCookie("admin", { path: "/admin", secure: true, httpOnly: true });
+        }
         res.send(`Sorry, ${profile.displayName}, you are unauthorized for this page<br /><a href="/">homepage</a>`);
       }
       console.log(`admin accessed by`, profile);
