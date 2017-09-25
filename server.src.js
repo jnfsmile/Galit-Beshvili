@@ -24,6 +24,12 @@ const port = process.env.PORT || 8080;
 //app.set('view engine', 'ejs');
 //app.engine('html', require('ejs').renderFile);
 app.use(logger('dev'));
+app.use(function(req, res, next) {
+  if(process.env.ENV !== "dev" && !req.secure) {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  }
+  next();
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -37,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.disable('etag');
 
-if (process.env.NODE_ENV === "development")
+if (process.env.ENV === "dev")
 {
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

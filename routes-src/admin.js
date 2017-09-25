@@ -46,9 +46,13 @@ router.get('/post-login', function(req, res, next) {
         return console.log('An error occured', err);
       }
       if (authorized.indexOf(profile.id) >= 0) {
-        res.cookie("admin", profile.id, { signed: true, httpOnly: true });
+        if (process.env.ENV === "dev") {
+          res.cookie("admin", profile.id, { httpOnly: true });
+        } else {
+          res.cookie("admin", profile.id, { secure: true, httpOnly: true });
+        }
         console.log(res.cookie);
-        res.redirect('/BlogEdit');
+        res.redirect('/blog/edit');
         //res.send(`${profile.displayName}:${profile.tagline}`);
       }
       else {
@@ -68,7 +72,7 @@ router.get('/post-login', function(req, res, next) {
 
 let verify = function(req, res, next) {
   const authorized = JSON.parse(process.env.AUTHORIZED);
-  const authenticated = authorized.indexOf(req.signedCookies.admin) >= 0;
+  const authenticated = authorized.indexOf(req.cookies.admin) >= 0;
   if (authenticated) {
     console.log("Authenticated request");
     next();

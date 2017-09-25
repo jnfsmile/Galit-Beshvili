@@ -99,3 +99,5 @@ routes/index.js
 client/**/*.js
 client/dist
 client/prod
+client - Copy
+client-ng
