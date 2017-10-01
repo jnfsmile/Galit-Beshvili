@@ -1,35 +1,20 @@
-import {Component} from '@angular/core';
-
-import {Content} from './services/content/index';
+import { Component, OnInit } from '@angular/core';
+import { StaticContentService as Content } from '../services/static-content.service';
 
 @Component({
-  selector: 'book',
+  selector: 'app-book',
   providers: [ Content ],
-  template: `
-      <section class="page book">
-        <h3>החיים שבתוכך</h3>
-        <p>
-          <thumbnail src="/assets/images/book-cover.jpg" alt="כריכה של הספר החיים שבתוכך"></thumbnail>
-        </p>
-        <div [innerHTML]="bookContent"></div>
-        <thumbnail src="/assets/images/BookLaunch/P1050794.jpg" alt="הספרים מוצעים למכירה"></thumbnail>
-        <thumbnail src="/assets/images/BookLaunch/P1050805.jpg" alt="אני והספרים"></thumbnail>
-        <thumbnail src="/assets/images/BookLaunch/P1050811.jpg" alt="עם תומר, מנכ&quot;ל &apos;דברי שיר&apos; וחנה, העורכת הראשית"></thumbnail>
-        <thumbnail src="/assets/images/BookLaunch/P1050817.jpg" alt="דברי ברכה מהרב שורטין, ראש מכון פוע&quot;ה"></thumbnail>
-        <youtube id="jHxLMnHLAlo"></youtube>
-        <br />
-        <youtube id="yGw6qo-9j2s"></youtube>
-      </section>
-  `,
+  templateUrl: './book.component.html',
+  styleUrls: ['./book.component.scss']
 })
-export class BookComponent {
-  bookContent = "אודות הספר";
+export class BookComponent implements OnInit {
 
-  constructor(public content: Content) {
+  bookContent = "על הספר"
 
-  }
+  constructor(public content: Content) {}
 
   ngOnInit() {
-    this.content.getData("aboutBook").subscribe(res => this.bookContent = res);
+    this.content.getData("book").subscribe(res => this.bookContent = res);
   }
+
 }

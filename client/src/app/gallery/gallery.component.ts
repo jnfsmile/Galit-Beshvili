@@ -1,13 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'gallery',
-  styles: [``],
-  template: `
-  <div></div>
-`
+  selector: 'app-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent {
-  @Input() alt: string;
+export class GalleryComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
 
 }

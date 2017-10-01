@@ -1,54 +1,60 @@
-import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
-import { AppComponent }  from './app.component';
-import { HomeComponent }        from './home/index';
-import { ContactComponent }     from './contact/index';
-import { AboutComponent }       from './about/index';
-import { MediaComponent }       from './media/index';
-import { BookComponent }        from './book/index';
-
-import { BlogComponent }        from './blog/index';
-import { BlogEditComponent }        from './blog/index';
-import { Content as BlogContentService }        from './blog/services/content/index';
-
-import { TagComponent }        from './tags/index';
-import { WorkshopComponent }    from './workshop/index';
-import { PersonalComponent }    from './personal/index';
-import { CreativeComponent }    from './creative/index'
-
-import { NotYetComponent }      from './notYet/index';
-import { EditableComponent }      from './editable/index';
-import { ThumbnailComponent }   from './thumbnail/index';
-import { GalleryComponent }   from './gallery/index';
-import { GalleryImageComponent }   from './gallery/index';
-import { YoutubeComponent }   from './youtube/index';
-
-import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
-import { TagInputModule } from 'ng2-tag-input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { AppRoutingModule }     from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { NotYetComponent } from './not-yet/not-yet.component';
+import { ContactComponent } from './contact/contact.component';
+import { BookComponent } from './book/book.component';
+import { PersonalComponent } from './personal/personal.component';
+import { TagComponent } from './tag/tag.component';
+import { WorkshopComponent } from './workshop/workshop.component';
+import { CreativeComponent } from './creative/creative.component';
+import { BlogComponent } from './blog/blog.component';
+import { AboutComponent } from './about/about.component';
+import { MediaComponent } from './media/media.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { HebDatePipe } from './pipes/heb-date.pipe';
 
-import { AppRoutingModule }     from './app-routing.module';
+import { TagInputModule } from 'ngx-chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
+import { YoutubeComponent } from './youtube/youtube.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { GalleryImageComponent } from './gallery-image/gallery-image.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NotYetComponent,
+    ContactComponent,
+    BookComponent,
+    PersonalComponent,
+    TagComponent,
+    WorkshopComponent,
+    CreativeComponent,
+    BlogComponent,
+    AboutComponent,
+    MediaComponent,
+    BlogEditComponent,
+    HebDatePipe,
+    YoutubeComponent,
+    GalleryComponent,
+    GalleryImageComponent,
+    SafePipe
+  ],
   imports: [
-   	FormsModule,
-  	HttpModule,
+    HttpModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
     TagInputModule, BrowserAnimationsModule
   ],
-  declarations: [ AppComponent, HomeComponent, ContactComponent, AboutComponent, BookComponent, BlogComponent, BlogEditComponent, TagComponent, MediaComponent,
-    PersonalComponent, WorkshopComponent, CreativeComponent, NotYetComponent, EditableComponent, ThumbnailComponent, GalleryComponent, GalleryImageComponent, YoutubeComponent,
-    HebDatePipe ],
-  providers: [
-    { provide: 'BASE_API_URL', useValue: "http://localhost:3300" }
-  ],
-  bootstrap:    [ AppComponent ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

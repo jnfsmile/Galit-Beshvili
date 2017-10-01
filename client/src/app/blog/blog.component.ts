@@ -1,40 +1,20 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 
-import {BlogPost} from './blog.post';
-import {Content as BlogContentService} from './services/content/index';
-import {SubjectTag} from '../tags/index';
-import {TagService} from '../tags/services/content/index';
+import {BlogPost} from './blog-post';
+import {BlogService as BlogContentService} from './blog.service';
+import {Tag as SubjectTag} from '../tag/tag';
+import {TagService} from '../tag/tag.service';
 
 @Component({
-  selector: 'blog',
-  providers: [ /*BlogContentService,*/ TagService ],
-  template: `
-      <section class="page blog">
-        <article>
-          <header>
-            <h3>בשבילי - הבלוג</h3>
-            <h4>{{title}}</h4>
-            <div>
-              <a [href]="'mailto:'+authorEmail">{{author}}</a>,
-              <time pubdate [attr.datetime]="lastChange">{{lastChange | hebdate}}</time>
-            </div>
-          </header>
-          <div [innerHTML]="body"></div>
-          <section>
-            <span>תגיות:</span>
-            <ul>
-              <li *ngFor="let tag of taglist">
-                <a (click)="gotoTag(tag._id)" [href]="'/tag/'+tag._id">{{tag.name}}</a>
-              </li>
-            </ul>
-          </section>
-        </article>
-      </section>
-  `
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.scss'],
+  providers: [ TagService ]
 })
-export class BlogComponent {
+export class BlogComponent implements OnInit {
+
   blogContent = "";
   body = "";
   title = "";
@@ -69,4 +49,5 @@ export class BlogComponent {
       });
     });
   }
+
 }

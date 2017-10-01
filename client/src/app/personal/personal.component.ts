@@ -1,25 +1,18 @@
-import {Component} from '@angular/core';
-
-import {Content} from './services/content/index';
+import { Component, OnInit } from '@angular/core';
+import { StaticContentService as Content } from '../services/static-content.service';
 
 @Component({
-  selector: 'personal',
+  selector: 'app-personal',
   providers: [ Content ],
-  template: `
-      <section class="page personal">
-        <h3>תהליך אישי בדרך להריון תקין ולידה</h3>
-        <div [innerHTML]="personalContent"></div>
-      </section>
-  `,
+  templateUrl: './personal.component.html',
+  styleUrls: ['./personal.component.scss']
 })
-export class PersonalComponent {
-  personalContent = "איך מתנהל תהליך אישי?";
+export class PersonalComponent implements OnInit {
+  personalContent = "בשבילי בתקשורת";
 
-  constructor(public content: Content) {
-
-  }
+  constructor(public content: Content) {}
 
   ngOnInit() {
-    this.content.getData("aboutPersonal").subscribe(res => this.personalContent = res);
+    this.content.getData("personal").subscribe(res => this.personalContent = res);
   }
 }

@@ -1,31 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'youtube',
-  styles: [`
-    .youtube-wrapper {
-      margin: 0;
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
-      padding-top: 25px;
-      height: 0;
-      width: 100%;
-    }
-    .youtube-wrapper iframe {
-    	position: absolute;
-    	top: 0;
-    	left: 0;
-    	width: 100%;
-    	height: 100%;
-    }
-  `],
-  template: `
-  <div class="youtube-wrapper">
-    <iframe width="560" height="315" [src]="url" frameborder="0" allowfullscreen></iframe>
-  </div>`
+  selector: 'app-youtube',
+  templateUrl: './youtube.component.html',
+  styleUrls: ['./youtube.component.scss']
 })
-export class YoutubeComponent implements OnInit{
+export class YoutubeComponent implements OnInit {
   big = false;
   @Input() id: string;
   url: SafeResourceUrl;

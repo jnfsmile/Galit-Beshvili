@@ -1,0 +1,29 @@
+.gallery-image-wrapper {
+    margin: auto;
+    text-align: center;
+  }
+  .gallery-image-wrapper > div {
+    display: inline-block;
+    position: relative;
+  }
+  [data-gallery-image] {
+    width: 80%;
+    cursor: pointer;
+  }
+  .big:before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.4;
+  }
+  .big [data-gallery-image] {
+    width: 60vw;
+    position: fixed;
+    top: 5vh;
+    right: 20vw;
+  }

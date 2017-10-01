@@ -1,19 +1,19 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/index';
-import { AboutComponent } from './about/index';
-import { MediaComponent } from './media/index';
-import { BookComponent } from './book/index';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { MediaComponent } from './media/media.component';
+import { BookComponent } from './book/book.component';
 
-import { BlogComponent } from './blog/index';
-import { BlogEditComponent } from './blog/index';
+import { BlogComponent } from './blog/blog.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
-import { TagComponent } from './tags/index';
-import { PersonalComponent } from './personal/index';
-import { WorkshopComponent } from './workshop/index';
-import { CreativeComponent } from './creative/index';
-import { ContactComponent } from './contact/index';
-import { NotYetComponent } from './notYet/index';
+import { TagComponent } from './tag/tag.component';
+import { PersonalComponent } from './personal/personal.component';
+import { WorkshopComponent } from './workshop/workshop.component';
+import { CreativeComponent } from './creative/creative.component';
+import { ContactComponent } from './contact/contact.component';
+import { NotYetComponent } from './not-yet/not-yet.component';
 
 const routes: Routes = [
   {

@@ -100,4 +100,4 @@ client/**/*.js
 client/dist
 client/prod
 client - Copy
-client-ng
+client-v1

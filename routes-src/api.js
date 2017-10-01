@@ -80,6 +80,7 @@ var db = mongojs(process.env.MONGODB_URI, ['beshvili']);
 //   });
 // });
 
+router.use('/', require('./api/static'));
 router.use('/', require('./api/blog'));
 router.use('/', require('./api/tag'));
 router.use('/', require('./api/author'));

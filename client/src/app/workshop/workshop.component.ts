@@ -1,25 +1,18 @@
-import {Component} from '@angular/core';
-
-import {Content} from './services/content/index';
+import { Component, OnInit } from '@angular/core';
+import { StaticContentService as Content } from '../services/static-content.service';
 
 @Component({
-  selector: 'workshop',
+  selector: 'app-workshop',
   providers: [ Content ],
-  template: `
-      <section class="page workshop">
-        <h3>סדנא ותהליך אישי בדרך להריון - התכנית המלאה</h3>
-        <div [innerHTML]="workshopContent"></div>
-      </section>
-  `,
+  templateUrl: './workshop.component.html',
+  styleUrls: ['./workshop.component.scss']
 })
-export class WorkshopComponent {
-  workshopContent = "איך מתנהל תהליך אישי?";
-
-  constructor(public content: Content) {
-
-  }
+export class WorkshopComponent implements OnInit {
+  workshopContent = "סדנאות"
+  constructor(public content: Content) {}
 
   ngOnInit() {
-    this.content.getData("aboutWorkshop").subscribe(res => this.workshopContent = res);
+    this.content.getData("workshop").subscribe(res => this.workshopContent = res);
   }
+
 }

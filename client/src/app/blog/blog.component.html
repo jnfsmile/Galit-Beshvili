@@ -1,0 +1,21 @@
+<section class="page blog">
+        <article>
+          <header>
+            <h3>בשבילי - הבלוג</h3>
+            <h4>{{title}}</h4>
+            <div class="metadata">
+              <a [href]="'mailto:'+authorEmail">{{author}}</a>,
+              <time pubdate [attr.datetime]="lastChange">{{lastChange | hebDate}}</time>
+            </div>
+          </header>
+          <div [innerHTML]="body|safe:'html'"></div>
+          <section>
+            <span>תגיות:</span>
+            <ul>
+              <li *ngFor="let tag of taglist">
+                <a (click)="gotoTag(tag._id)" [href]="'/tag/'+tag._id">{{tag.name}}</a>
+              </li>
+            </ul>
+          </section>
+        </article>
+      </section>
