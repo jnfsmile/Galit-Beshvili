@@ -45,7 +45,12 @@ export class BlogComponent implements OnInit {
         this.authorEmail = blog.authorEmail;
         this.lastChange = new Date(blog.lastChange).toISOString();
 
-        this.tagService.getData(/*blog.tags*/).subscribe( (res:SubjectTag[]) => {this.taglist=res.filter(tag=>blog.tags.indexOf(tag.id)>=0)} );
+        this.tagService.getData(/*blog.tags*/).subscribe( (res:SubjectTag[]) => {
+          res = res.map(item => new SubjectTag(item));
+          this.taglist=res.filter(tag=>{
+            return blog.tags.indexOf(tag.id)>=0
+          })
+        } );
       });
     });
   }

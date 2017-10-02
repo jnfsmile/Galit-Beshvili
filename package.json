@@ -13,9 +13,7 @@
     "start:dev": "tsc && concurrently \"tsc -w\" \"lite-server\" \"nodemon -e scss -x 'npm run build:css'\"",
     "babelroutes": "babel routes-src -w -d routes",
     "babel": "babel server.src.js -w -o server.js",
-    "server:dev": "nodemon server.js",
-    "minify": "uglifyjs client/prod/bundle.js --screw-ie8 --compress --mangle --output client/prod/bundle.min.js",
-    "build": "browserify -s main client/dist/main.js > client/prod/bundle.js && npm run minify"
+    "server:dev": "nodemon server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",

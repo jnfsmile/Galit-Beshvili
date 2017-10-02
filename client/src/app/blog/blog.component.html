@@ -4,7 +4,7 @@
             <h3>בשבילי - הבלוג</h3>
             <h4>{{title}}</h4>
             <div class="metadata">
-              <a [href]="'mailto:'+authorEmail">{{author}}</a>,
+              <a [href]="'mailto:'+authorEmail | safe: 'url'">{{author}}</a>,
               <time pubdate [attr.datetime]="lastChange">{{lastChange | hebDate}}</time>
             </div>
           </header>
@@ -13,7 +13,7 @@
             <span>תגיות:</span>
             <ul>
               <li *ngFor="let tag of taglist">
-                <a (click)="gotoTag(tag._id)" [href]="'/tag/'+tag._id">{{tag.name}}</a>
+                <a (click)="gotoTag(tag.id)" [href]="'/tag/'+tag.id | safe: 'resourceUrl'">{{tag.name}}</a>
               </li>
             </ul>
           </section>

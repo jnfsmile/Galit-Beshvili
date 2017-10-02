@@ -1,3 +1,7 @@
-<p>
-  tag works!
-</p>
+<section class="page tag postbatch">
+  <h3>{{title}}</h3>
+  <article *ngFor="let post of posts">
+    <div (click)="navigate(post._id)"><a>{{post.title}}</a></div>
+    <div>{{post.author}}</div>
+  </article>
+</section>

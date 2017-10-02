@@ -34,7 +34,7 @@
     <div *ngIf='currentId!==""'>
       <div class="song-intro">{{selectedContent.intro}}</div>
       <div [ngClass]="{'song-title': true, 'center': selectedContent.type=='song'}">{{selectedContent.name}}</div>
-      <div [ngClass]="{'song-words': true, 'center': selectedContent.type=='song'}" [innerHTML]="selectedContent.words"></div>
+      <div [ngClass]="{'song-words': true, 'center': selectedContent.type=='song'}" [innerHTML]="selectedContent.words | safe: 'html'"></div>
       <br />
       <div class="content-end">*************************</div>
     </div>
