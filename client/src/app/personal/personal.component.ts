@@ -8,7 +8,7 @@ import { StaticContentService as Content } from '../services/static-content.serv
   styleUrls: ['./personal.component.scss']
 })
 export class PersonalComponent implements OnInit {
-  personalContent = "בשבילי בתקשורת";
+  personalContent = "תהליך אישי";
 
   constructor(public content: Content) {}
 

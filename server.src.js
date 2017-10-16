@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
+const admin = require('./routes/admin');
 const api = require('./routes/api');
 const sapi = require('./routes/sapi');
 
@@ -25,8 +26,10 @@ const port = process.env.PORT || 8080;
 //app.engine('html', require('ejs').renderFile);
 app.use(logger('dev'));
 app.use(function(req, res, next) {
-  if(process.env.ENV !== "dev" && !req.secure) {
-    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  if(process.env.ENV !== "dev") {
+    if (req.header('x-forwarded-proto') !== 'https') {
+        return res.redirect(`https://${req.header('host')}${req.url}`);
+      }
   }
   next();
 });
@@ -53,6 +56,7 @@ if (process.env.ENV === "dev")
 }
 
 app.use('/', index);
+app.use('/admin/', admin);
 app.use('/api/v1/', api);
 app.use('/sapi/v1/', sapi);
 
@@ -76,7 +80,7 @@ app.use(function(req, res, next) {
 var server = app.listen(port, () => {
     var host = 'localhost';
     var port = server.address().port;
-    console.log('App listening at http://%s:%s', host, port);
+    console.log('App listening at //%s:%s', host, port);
 });
 
 module.exports = app;
