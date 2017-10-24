@@ -18,6 +18,7 @@ import { AboutComponent } from './about/about.component';
 import { MediaComponent } from './media/media.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { HebDatePipe } from './pipes/heb-date.pipe';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
@@ -25,6 +26,7 @@ import { YoutubeComponent } from './youtube/youtube.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryImageComponent } from './gallery-image/gallery-image.component';
 import { SafePipe } from './pipes/safe.pipe';
+import {GoogleAnalyticsEventsService} from "./services/google-analytics-events.service";
 
 @NgModule({
   declarations: [
@@ -52,9 +54,10 @@ import { SafePipe } from './pipes/safe.pipe';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    TagInputModule, BrowserAnimationsModule
+    TagInputModule, BrowserAnimationsModule,
+    CKEditorModule
   ],
-  providers: [],
+  providers: [GoogleAnalyticsEventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
