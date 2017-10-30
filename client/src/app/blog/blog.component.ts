@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 
 import {BlogPost} from './blog-post';
 import {BlogService as BlogContentService} from './blog.service';
-import {Tag as SubjectTag} from '../tag/tag';
+import {Tag} from '../tag/tag';
 import {TagService} from '../tag/tag.service';
 
 @Component({
@@ -45,12 +45,9 @@ export class BlogComponent implements OnInit {
         this.authorEmail = blog.authorEmail;
         this.lastChange = new Date(blog.lastChange).toISOString();
 
-        this.tagService.getData(/*blog.tags*/).subscribe( (res:SubjectTag[]) => {
-          res = res.map(item => new SubjectTag(item));
-          this.taglist=res.filter(tag=>{
-            return blog.tags.indexOf(tag.id)>=0
-          })
-        } );
+        this.tagService.getData().subscribe( (res:Tag[]) => {
+            this.taglist=res.filter(tag=>blog.tags.indexOf(tag.id)>=0);
+          } );
       });
     });
   }
