@@ -4,17 +4,19 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { environment } from '../../environments/environment';
 
-import { Tag as SubjectTag } from "./tag";
+import { Tag } from "./tag";
 
 @Injectable()
 export class TagService {
 
   constructor(private http: Http) {  }
 
-  getData(/*filterTags: string[]*/): Observable<SubjectTag[]> {
+  getData(): Observable<Tag[]> {
     let webApiBaseUrl = environment.apiUrl;
     return this.http.get(webApiBaseUrl + `/api/v1/tags`)
-      .map(item => item.json()/*.filter(t => filterTags.indexOf(t) >= 0).map(t => new SubjectTag(t))*/);
+      .map(item => {
+        return item.json().map( t => new Tag(t));
+      });
   }
 
 }

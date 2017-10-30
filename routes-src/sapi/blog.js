@@ -45,6 +45,7 @@ router.put('/blog/:id', function(req, res, next) {
   if (blog.tags) {
     updObj.tags = blog.tags;
   }
+  updObj.visible = blog.visible;
   updObj.lastChange = new Date();
 
   if (!updObj) {
@@ -59,7 +60,7 @@ router.put('/blog/:id', function(req, res, next) {
     }, updObj, {}, function(err, result) {
       if (err) {
         console.log(err);
-      res.send("update failed          v  v2v2                                 z b bv");
+      res.send("update failed");
       } else {
       res.json(result);
       }

@@ -23,8 +23,8 @@ export class BlogService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(this.webApiBaseUrl + `/sapi/v1/blog/${post.id}`, JSON.stringify(post), options)
-    .map(item => item.json());
+    return this.http.post(this.webApiBaseUrl + `/sapi/v1/blog`, JSON.stringify(post), options)
+    .map(item => new BlogPost(item.json()));
   }
 
   update(post: BlogPost): Observable<BlogPost> {
@@ -36,7 +36,7 @@ export class BlogService {
   }
 
   getLastId() : Observable<BlogPost> {
-    return this.http.get(this.webApiBaseUrl + `/api/v1/blogs`).map(item => item.json());
+    return this.http.get(this.webApiBaseUrl + `/api/v1/blogs`).map(item => new BlogPost(item.json()));
   }
 
   getData(id) : Observable<BlogPost[]>{
