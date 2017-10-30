@@ -1,3 +1,23 @@
 <p>
-  blog-edit works!
+  <input [(ngModel)]='title'
+      (change)="onTitleChange($event)"
+      (blur)="onTitleBlur($event)"
+ />
+  <input type="checkbox" name="visible" [(ngModel)]="visible">
+  <label for="visible">להצגה</label>
 </p>
+<p>
+  <ckeditor
+    [(ngModel)]="body"
+    [readonly]="false"
+    (change)="onBodyChange($event)"
+    (ready)="onBodyReady($event)"
+    (focus)="onBodyFocus($event)"
+    (blur)="onBodyBlur($event)"
+    debounce="1000">
+  </ckeditor>
+</p>
+<p>
+  <tag-input [(ngModel)]='taglistFlat'></tag-input>
+</p>
+<p [innerHTML]="body|safe:'html'"></p>
