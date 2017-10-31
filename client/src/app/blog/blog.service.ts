@@ -42,5 +42,8 @@ export class BlogService {
   getData(id) : Observable<BlogPost[]>{
     return this.http.get(this.webApiBaseUrl + `/api/v1/blog/${id}`).map(item => item.json());
   }
+  getEditData(id) : Observable<BlogPost>{
+    return this.http.get(this.webApiBaseUrl + `/sapi/v1/blog/${id}`).map(item => new BlogPost(item.json()));
+  }
 
 }

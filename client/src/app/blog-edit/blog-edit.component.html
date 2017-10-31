@@ -1,23 +1,29 @@
 <p>
   <input [(ngModel)]='title'
-      (change)="onTitleChange($event)"
-      (blur)="onTitleBlur($event)"
+      (change)="onElementChange($event)"
  />
-  <input type="checkbox" name="visible" [(ngModel)]="visible">
+  <input type="checkbox" name="visible" [(ngModel)]="visible"
+    (change)="onElementChange($event)" >
   <label for="visible">להצגה</label>
 </p>
 <p>
   <ckeditor
     [(ngModel)]="body"
     [readonly]="false"
-    (change)="onBodyChange($event)"
-    (ready)="onBodyReady($event)"
-    (focus)="onBodyFocus($event)"
-    (blur)="onBodyBlur($event)"
+    (change)="onElementChange($event)"
     debounce="1000">
   </ckeditor>
 </p>
 <p>
-  <tag-input [(ngModel)]='taglistFlat'></tag-input>
+  <tag-input [ngModel]="taglistFlat"
+             [separatorKeyCodes]="[32, 188]"
+             [onlyFromAutocomplete]="true"
+             [addOnBlur]="true"
+             (onAdd)="onTagAdd($event)"
+             (onRemove)="onTagRemove($event)">
+    <tag-input-dropdown [showDropdownIfEmpty]="true"
+                        [autocompleteItems]="allTaglistFlat">
+    </tag-input-dropdown>
+</tag-input>
 </p>
 <p [innerHTML]="body|safe:'html'"></p>

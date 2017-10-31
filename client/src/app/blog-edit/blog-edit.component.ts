@@ -22,6 +22,7 @@ export class BlogEditComponent implements OnInit {
   lastChange = new Date().toISOString();
   taglist = [];
   taglistFlat = [];
+  allTaglistFlat = [];
   post: BlogPost;
   visible = false;
 
@@ -32,11 +33,13 @@ export class BlogEditComponent implements OnInit {
     this.route.params
     .switchMap((params: Params) => Observable.of( params['id'] ))
     .subscribe( id => {
+      console.log(id);
       if ( !id ) {
         this.post = new BlogPost();
       }
       else {
-        this.content.getData(id).subscribe( all => {
+        this.content.getEditData(id).subscribe( all => {
+          console.log(all);
           if ( !all ) {
             this.post = new BlogPost();
             return;
@@ -52,6 +55,7 @@ export class BlogEditComponent implements OnInit {
 
           this.tagService.getData().subscribe( (res:Tag[]) => {
               this.taglist=res.filter(tag=>blog.tags.indexOf(tag.id)>=0);
+              this.allTaglistFlat=res.map( tag => { return { display: tag.name, value: tag.id } } );
               this.taglistFlat=this.taglist.map( tag => { return { display: tag.name, value: tag.id } } );
               this.post.tags = this.taglist.map( tag => tag.id );
             } );
@@ -60,37 +64,25 @@ export class BlogEditComponent implements OnInit {
     });
   }
 
-  onBodyReady() {}
-  onBodyFocus() {}
-  onBodyChange() {
-    this.bodyUpdate();
+  onTagAdd(tag) {
+    this.taglistFlat.push(tag);
+    this.onElementChange(tag);
   }
-  onBodyBlur() {
-    this.bodyUpdate();
+  onTagRemove(tag) {
+    this.taglistFlat.splice(this.taglist.indexOf(tag), 1);
+    this.onElementChange(tag);
   }
-  onTitleChange() {
-    this.titleUpdate();
-  }
-  onTitleBlur() {
-    this.titleUpdate();
+  onElementChange(e) {
+    this.postUpdate();
   }
 
-  titleUpdate( ) {
+  postUpdate( ) {
     this.post.title = this.title;
+    this.post.body = this.htmlEncode(this.body);
+    this.post.visible = this.visible;
+    this.post.tags = this.taglistFlat.map( t => t.value )
     if ( this.verifyId() ) {
       this.content.update( this.post ).subscribe( /*post => console.log(post)*/ );
-    }
-  }
-  bodyUpdate() {
-    this.post.body = this.htmlEncode(this.body);
-    if (this.verifyId()) {
-      this.content.update(this.post).subscribe( /*post => console.log(post)*/ );
-    }
-  }
-  lastChangeUpdate() {
-    this.post.lastChange = this.lastChange;
-    if (this.verifyId()) {
-      this.content.update(this.post).subscribe( /*post => console.log(post)*/ );
     }
   }
 

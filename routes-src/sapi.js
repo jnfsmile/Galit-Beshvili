@@ -7,7 +7,7 @@ let verify = function(req, res, next) {
   console.log(req.signedCookies);
   const authorized = JSON.parse(process.env.AUTHORIZED);
   const authenticated = authorized.indexOf(req.signedCookies.admin) >= 0;
-  if (authenticated) {
+  if (authenticated || process.env.ENV === "dev") {
     console.log("Authenticated request");
     next();
   }
