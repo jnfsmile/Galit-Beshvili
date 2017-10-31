@@ -33,13 +33,11 @@ export class BlogEditComponent implements OnInit {
     this.route.params
     .switchMap((params: Params) => Observable.of( params['id'] ))
     .subscribe( id => {
-      console.log(id);
       if ( !id ) {
         this.post = new BlogPost();
       }
       else {
         this.content.getEditData(id).subscribe( all => {
-          console.log(all);
           if ( !all ) {
             this.post = new BlogPost();
             return;

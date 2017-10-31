@@ -27,6 +27,7 @@ const port = process.env.PORT || 8080;
 app.use(logger('dev'));
 app.use(function(req, res, next) {
   if(process.env.ENV !== "dev") {
+    //The Heroku way to check for https
     if (req.header('x-forwarded-proto') !== 'https') {
         return res.redirect(`https://${req.header('host')}${req.url}`);
       }
@@ -51,6 +52,7 @@ if (process.env.ENV === "dev")
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS,PUT,DELETE");
     next();
   });
 }
@@ -61,8 +63,13 @@ app.use('/api/v1/', api);
 app.use('/sapi/v1/', sapi);
 
 // 404 catch
-app.all('*', function (req, res) {
-  res.status(200).sendFile(path.join(__dirname, '/client/index.html'), {}, function (err) {
+app.all('*', function (req, res, next) {
+  let indexPath = '/client/index.html';
+  if (process.env.ENV === "dev")
+  {
+    indexPath = '/client/src/index.html';
+  }
+  res.status(200).sendFile(path.join(__dirname, indexPath), {}, function (err) {
     if (err) {
       next(err);
     } else {
