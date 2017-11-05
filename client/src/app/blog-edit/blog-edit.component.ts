@@ -37,12 +37,11 @@ export class BlogEditComponent implements OnInit {
         this.post = new BlogPost();
       }
       else {
-        this.content.getEditData(id).subscribe( all => {
-          if ( !all ) {
+        this.content.getEditData(id).subscribe( blog => {
+          if ( !blog ) {
             this.post = new BlogPost();
             return;
           }
-          let blog = new BlogPost(all);
           this.post = blog;
           this.body = this.htmlDecode(blog.body);
           this.title = blog.title;
@@ -75,6 +74,7 @@ export class BlogEditComponent implements OnInit {
   }
 
   postUpdate( ) {
+    console.log(this.post.id);
     this.post.title = this.title;
     this.post.body = this.htmlEncode(this.body);
     this.post.visible = this.visible;
@@ -85,8 +85,10 @@ export class BlogEditComponent implements OnInit {
   }
 
   verifyId() {
+    console.log(this.post);
     if (!this.post || !this.post.id) {
       if (this.post.title !== "" && this.post.body !== "") {
+        console.log("save");
         this.content.save(this.post)
         .subscribe( res => this.post.id = res.id )
       }

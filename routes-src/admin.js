@@ -79,7 +79,7 @@ let verify = function(req, res, next) {
   }
   else {
     console.log("Unauthenticated access");
-    res.redirect('/');
+    res.status(401).text("Unauthenticated");
   }
 }
 
