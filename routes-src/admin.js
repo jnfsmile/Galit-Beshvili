@@ -51,9 +51,7 @@ router.get('/post-login', function(req, res, next) {
         } else {
           res.cookie("admin", profile.id, { secure: true, httpOnly: true });
         }
-        console.log(res.cookie);
         res.redirect('/blog/edit');
-        //res.send(`${profile.displayName}:${profile.tagline}`);
       }
       else {
         if (process.env.ENV == "dev") {
@@ -63,8 +61,6 @@ router.get('/post-login', function(req, res, next) {
         }
         res.send(`Sorry, ${profile.displayName}, you are unauthorized for this page<br /><a href="/">homepage</a>`);
       }
-      console.log(`admin accessed by`, profile);
-
     });
 
   });
@@ -79,7 +75,7 @@ let verify = function(req, res, next) {
   }
   else {
     console.log("Unauthenticated access");
-    res.status(401).text("Unauthenticated");
+    res.send(`Sorry, you are unauthorized for this page<br /><a href="/">homepage</a>`);
   }
 }
 

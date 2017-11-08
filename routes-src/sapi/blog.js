@@ -5,6 +5,16 @@ var router = express.Router();
 var mongojs = require('mongojs');
 var db = mongojs(process.env.MONGODB_URI, ['beshvili']);
 
+/* GET list of all blogs */
+router.get('/blogs', function(req, res, next) {
+  db.blogs.find(function(err, blogs) {
+    if (err) {
+        res.send(err);
+    } else {
+      res.json(blogs);
+    }
+  });
+});
 /* GET a blog post by Id, be it visible or not */
 router.get('/blog/:id', function(req, res, next) {
   let id = req.params["id"];

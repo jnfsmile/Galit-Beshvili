@@ -39,6 +39,9 @@ export class BlogService {
     return this.http.get(this.webApiBaseUrl + `/api/v1/blogs`).map(item => new BlogPost(item.json()));
   }
 
+  getAll() : Observable<BlogPost[]>{
+    return this.http.get(this.webApiBaseUrl + `/sapi/v1/blogs`).map(item => item.json().map( b => new BlogPost(b)));
+  }
   getData(id) : Observable<BlogPost[]>{
     return this.http.get(this.webApiBaseUrl + `/api/v1/blog/${id}`).map(item => item.json());
   }

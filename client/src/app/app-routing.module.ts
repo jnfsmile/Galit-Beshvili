@@ -8,6 +8,8 @@ import { BookComponent } from './book/book.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
+import { BlogAdminComponent } from './blog-admin/blog-admin.component';
+
 import { TagComponent } from './tag/tag.component';
 import { PersonalComponent } from './personal/personal.component';
 import { WorkshopComponent } from './workshop/workshop.component';
@@ -69,6 +71,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'blog/admin',
+    component: BlogAdminComponent
   }
 ];
 @NgModule({

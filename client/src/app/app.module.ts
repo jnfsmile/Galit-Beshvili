@@ -26,7 +26,8 @@ import { YoutubeComponent } from './youtube/youtube.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryImageComponent } from './gallery-image/gallery-image.component';
 import { SafePipe } from './pipes/safe.pipe';
-import {GoogleAnalyticsEventsService} from "./services/google-analytics-events.service";
+import { GoogleAnalyticsEventsService } from "./services/google-analytics-events.service";
+import { BlogAdminComponent } from './blog-admin/blog-admin.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {GoogleAnalyticsEventsService} from "./services/google-analytics-events.s
     YoutubeComponent,
     GalleryComponent,
     GalleryImageComponent,
-    SafePipe
+    SafePipe,
+    BlogAdminComponent
   ],
   imports: [
     HttpModule,

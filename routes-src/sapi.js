@@ -4,16 +4,15 @@ var mongojs = require('mongojs');
 var db = mongojs(process.env.MONGODB_URI, ['beshvili']);
 
 let verify = function(req, res, next) {
-  console.log(req.signedCookies);
   const authorized = JSON.parse(process.env.AUTHORIZED);
-  const authenticated = authorized.indexOf(req.signedCookies.admin) >= 0;
+  const authenticated = authorized.indexOf(req.cookies.admin) >= 0;
   if (authenticated || process.env.ENV === "dev") {
     console.log("Authenticated request");
     next();
   }
   else {
     console.log("Unauthenticated access");
-    res.redirect('/');
+    res.status(401).text("Unauthenticated");
   }
 }
 router.use('/', verify);
