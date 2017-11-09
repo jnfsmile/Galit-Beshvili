@@ -1,5 +1,11 @@
-<h3>{{title}}</h3>
-<article *ngFor="let post of posts">
-  <div (click)="navigate(post.id)"><a>{{post.title}}</a></div>
-  <div>{{post.author}}</div>
-</article>
+<section class="page blog-admin">
+  <h3>{{title}}</h3>
+  <article>
+    <div (click)="navigate('')" class="new-blog-button"><a><b>בלוג חדש</b></a></div>
+  </article>
+  <br />
+  <article *ngFor="let post of posts">
+    <div (click)="navigate(post.id)"><a>{{post.title}}</a></div>
+    <div>{{post.author}}</div>
+  </article>
+</section>

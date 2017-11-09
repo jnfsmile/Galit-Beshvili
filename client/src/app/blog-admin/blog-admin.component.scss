@@ -1,0 +1,13 @@
+@import
+'../../sass/global';
+
+.blog-admin {
+  .new-blog-button {
+    background: lighten($brand-color, 20%);
+    padding: 0.2em;
+    display: inline-block;
+    a {
+      color: white;
+    }
+  }
+}
