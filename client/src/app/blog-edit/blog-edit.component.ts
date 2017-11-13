@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute, Params } from "@angular/router";
+import { Observable } from "rxjs/Observable";
 
-import { BlogPost } from '../blog/blog-post';
-import { BlogService } from '../blog/blog.service';
-import { Tag } from '../tag/tag';
-import { TagService } from '../tag/tag.service';
+import { BlogPost } from "../blog/blog-post";
+import { BlogService } from "../blog/blog.service";
+import { Tag } from "../tag/tag";
+import { TagService } from "../tag/tag.service";
 
 @Component({
-  selector: 'app-blog-edit',
+  selector: "app-blog-edit",
   providers: [ TagService ],
-  templateUrl: './blog-edit.component.html',
-  styleUrls: ['./blog-edit.component.scss']
+  templateUrl: "./blog-edit.component.html",
+  styleUrls: ["./blog-edit.component.scss"]
 })
 export class BlogEditComponent implements OnInit {
 
@@ -32,7 +32,7 @@ export class BlogEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-    .switchMap((params: Params) => Observable.of( params['id'] ))
+    .switchMap((params: Params) => Observable.of( params["id"] ))
     .subscribe( id => {
       if ( !id ) {
         this.post = new BlogPost();
