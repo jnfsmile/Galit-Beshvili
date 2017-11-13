@@ -1,79 +1,79 @@
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { MediaComponent } from './media/media.component';
-import { BookComponent } from './book/book.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { HomeComponent } from "./home/home.component";
+import { AboutComponent } from "./about/about.component";
+import { MediaComponent } from "./media/media.component";
+import { BookComponent } from "./book/book.component";
 
-import { BlogComponent } from './blog/blog.component';
-import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { BlogComponent } from "./blog/blog.component";
+import { BlogEditComponent } from "./blog-edit/blog-edit.component";
 
-import { BlogAdminComponent } from './blog-admin/blog-admin.component';
+import { BlogAdminComponent } from "./blog-admin/blog-admin.component";
 
-import { TagComponent } from './tag/tag.component';
-import { PersonalComponent } from './personal/personal.component';
-import { WorkshopComponent } from './workshop/workshop.component';
-import { CreativeComponent } from './creative/creative.component';
-import { ContactComponent } from './contact/contact.component';
-import { NotYetComponent } from './not-yet/not-yet.component';
+import { TagComponent } from "./tag/tag.component";
+import { PersonalComponent } from "./personal/personal.component";
+import { WorkshopComponent } from "./workshop/workshop.component";
+import { CreativeComponent } from "./creative/creative.component";
+import { ContactComponent } from "./contact/contact.component";
+import { NotYetComponent } from "./not-yet/not-yet.component";
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
+    path: "",
+    redirectTo: "/home",
+    pathMatch: "full"
   },
   {
-    path: 'home',
+    path: "home",
     component: HomeComponent
   },
   {
-    path: 'personal',
+    path: "personal",
     component: PersonalComponent
   },
     {
-      path: 'book',
+      path: "book",
       component: BookComponent
   },
     {
-      path: 'creative',
+      path: "creative",
       component: CreativeComponent
   },
   {
-    path: 'workshop',
+    path: "workshop",
     component: WorkshopComponent
   },
   {
-    path: 'lecture',
+    path: "lecture",
     component: NotYetComponent
-    //component: LectureComponent
+    // component: LectureComponent
   },
   {
-    path: 'blog',
+    path: "blog",
     component: BlogComponent
   },
   {
-    path: 'blog/edit',
+    path: "blog/edit",
     component: BlogEditComponent
   },
   {
-    path: 'tag',
+    path: "tag",
     component: TagComponent
   },
   {
-    path: 'about',
+    path: "about",
     component: AboutComponent
   },
   {
-    path: 'media',
+    path: "media",
     component: MediaComponent
   },
   {
-    path: 'contact',
+    path: "contact",
     component: ContactComponent
   },
   {
-    path: 'blog/admin',
+    path: "blog/admin",
     component: BlogAdminComponent
   }
 ];

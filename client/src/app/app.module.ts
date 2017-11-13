@@ -28,6 +28,7 @@ import { GalleryImageComponent } from './gallery-image/gallery-image.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { GoogleAnalyticsEventsService } from "./services/google-analytics-events.service";
 import { BlogAdminComponent } from './blog-admin/blog-admin.component';
+import { SubtleMessageComponent } from './subtle-message/subtle-message.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { BlogAdminComponent } from './blog-admin/blog-admin.component';
     GalleryComponent,
     GalleryImageComponent,
     SafePipe,
-    BlogAdminComponent
+    BlogAdminComponent,
+    SubtleMessageComponent
   ],
   imports: [
     HttpModule,

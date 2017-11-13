@@ -1,21 +1,26 @@
+<h3>איזור עריכה</h3>
 <p>
+  <label for="title">כותרת</label>
   <input [(ngModel)]='title'
       (change)="onElementChange($event)"
+      name="title"
  />
+ <br />
+ <label for="visible">לפרסום?</label>
   <input type="checkbox" name="visible" [(ngModel)]="visible"
-    (change)="onElementChange($event)" >
-  <label for="visible">להצגה</label>
+    (click)="onElementChange($event)" >
 </p>
 <p>
   <ckeditor
     [(ngModel)]="body"
     [readonly]="false"
     (change)="onElementChange($event)"
-    debounce="3500">
+    debounce="2500">
   </ckeditor>
 </p>
 <p>
   <tag-input [ngModel]="taglistFlat"
+             placeholder="הוספת תגית"
              [separatorKeyCodes]="[32, 188]"
              [onlyFromAutocomplete]="true"
              [addOnBlur]="true"
@@ -26,4 +31,6 @@
     </tag-input-dropdown>
 </tag-input>
 </p>
+<h3>תצוגה מקדימה</h3>
 <p [innerHTML]="body|safe:'html'"></p>
+<app-subtle-message [message]="userMessage"></app-subtle-message>

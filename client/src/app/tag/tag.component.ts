@@ -32,7 +32,9 @@ export class TagComponent implements OnInit {
         this.title = (tags.length > 0) ? tags.filter(tag => tag.id === id)[0].name : ""
       });
       this.blogService.getByTag( id ).subscribe( (res:BlogPost[]) => {
-        if (res.length === 0) return;
+        if (res.length === 0) {
+          return;
+        }
         this.posts.push(...res);
       });
     });

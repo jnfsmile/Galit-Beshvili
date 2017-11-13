@@ -1,13 +1,13 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 declare var Hebcal: any;
 
 @Pipe({
-  name: 'hebDate'
+  name: "hebDate"
 })
 export class HebDatePipe implements PipeTransform {
 
   transform(value: Date): string {
-    let hDate = new Hebcal.HDate(new Date(value)).toString('h');
+    const hDate = new Hebcal.HDate(new Date(value)).toString("h");
     return hDate;
   }
 

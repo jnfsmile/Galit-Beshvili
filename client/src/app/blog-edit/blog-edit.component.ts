@@ -25,6 +25,7 @@ export class BlogEditComponent implements OnInit {
   allTaglistFlat = [];
   post: BlogPost;
   visible = false;
+  userMessage = "";
 
   constructor(private route: ActivatedRoute, private router: Router, public content: BlogService, public tagService: TagService) {
   }
@@ -43,7 +44,7 @@ export class BlogEditComponent implements OnInit {
             return;
           }
           this.post = blog;
-          this.body = this.htmlDecode(blog.body);
+          this.body = blog.body;
           this.title = blog.title;
           this.author = blog.author;
           this.authorEmail = blog.authorEmail;
@@ -70,48 +71,41 @@ export class BlogEditComponent implements OnInit {
     this.onElementChange(tag);
   }
   onElementChange(e) {
+    if (e.target && e.target.type === "checkbox" && !this.visible) {
+      const publishConfirmation = confirm("בטוחה שאת רוצה לפרסם?");
+      if (!publishConfirmation) {
+        return false;
+      }
+    }
     this.postUpdate();
   }
 
   postUpdate( ) {
-    console.log(this.post.id);
     this.post.title = this.title;
-    this.post.body = this.htmlEncode(this.body);
+    // this.post.body = this.htmlEncode(this.body);
+    // console.log(this.post.body,this.body);
+    this.post.body = this.body;
     this.post.visible = this.visible;
     this.post.tags = this.taglistFlat.map( t => t.value )
     if ( this.verifyId() ) {
-      this.content.update( this.post ).subscribe( /*post => console.log(post)*/ );
+      this.content.update( this.post ).subscribe( post => {
+        this.userMessage = "נשמר בהצלחה - " + (this.visible ? "מתעדכן באתר" : "לא לפרסום");
+      } );
     }
   }
 
   verifyId() {
-    console.log(this.post);
     if (!this.post || !this.post.id) {
       if (this.post.title !== "" && this.post.body !== "") {
-        console.log("save");
         this.content.save(this.post)
-        .subscribe( res => this.post.id = res.id )
+        .subscribe( res => {
+          this.post.id = res.id
+          this.userMessage = "נוצר פוסט במערכת";
+        })
       }
       return false;
     }
     return true;
   }
-
-  htmlEncode(mdStr: string) {
-    let htmlStr = "<p>" + mdStr + "</p>";
-    htmlStr = htmlStr
-    .replace(/\n\n/gi, "</p><p>")
-    .replace(/\n/gi, "<br />");
-    return htmlStr;
-  }
-  htmlDecode(htmlStr: string) {
-    let mdStr = htmlStr
-    .replace(/<br \/>/gi, "\n")
-    .replace(/<\/p>/gi, "\n\n")
-    .replace(/<p>/gi, "");
-    return mdStr;
-  }
-
-
 
 }
