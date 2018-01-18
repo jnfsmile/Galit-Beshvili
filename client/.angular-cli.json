@@ -25,7 +25,7 @@
       "scripts": [
         "assets/scripts/jquery/jquery.2.2.4.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../node_modules/hebcal/client/hebcal.js",
+        "../node_modules/hebcal/client/hebcal.noloc.min.js",
         "assets/scripts/nagishli/nagishli.js"
       ],
       "environmentSource": "environments/environment.ts",
